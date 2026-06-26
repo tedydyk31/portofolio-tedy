@@ -1180,6 +1180,41 @@
   <img id="lightboxImg" src="" alt="Dokumentasi proyek (tampilan penuh)">
 </div>
 
+<!-- Modal Setup GitHub -->
+<div id="ghSetupModal" style="position:fixed;inset:0;background:rgba(10,20,28,0.7);z-index:3100;display:none;align-items:center;justify-content:center;padding:20px;">
+  <div style="background:#fff;color:#102530;padding:28px;border-radius:10px;max-width:400px;width:100%;font-family:var(--sans);">
+    <h3 style="font-family:var(--display);font-size:1.05rem;margin-bottom:6px;">⚙️ Setup Publish Otomatis</h3>
+    <p style="font-size:0.78rem;color:#4D6470;margin-bottom:18px;">Isi sekali, tersimpan di browser ini. Kalau token habis masa berlaku, isi ulang di sini.</p>
+
+    <label style="font-size:0.76rem;color:#4D6470;display:block;margin-bottom:4px;">GitHub Personal Access Token</label>
+    <input id="ghTokenInput" type="password" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx"
+      style="width:100%;box-sizing:border-box;padding:9px 12px;border-radius:6px;border:1.5px solid #ddd;font-size:0.87rem;margin-bottom:5px;outline:none;">
+    <p style="font-size:0.72rem;color:#9FC2CB;margin-bottom:14px;">
+      Buat di: github.com → Settings → Developer settings → Personal access tokens → Classic → centang <b>repo</b>
+    </p>
+
+    <label style="font-size:0.76rem;color:#4D6470;display:block;margin-bottom:4px;">Username GitHub</label>
+    <input id="ghOwnerInput" type="text" placeholder="tedydyk31"
+      style="width:100%;box-sizing:border-box;padding:9px 12px;border-radius:6px;border:1.5px solid #ddd;font-size:0.87rem;margin-bottom:12px;outline:none;">
+
+    <label style="font-size:0.76rem;color:#4D6470;display:block;margin-bottom:4px;">Nama Repository</label>
+    <input id="ghRepoInput" type="text" placeholder="portofolio"
+      style="width:100%;box-sizing:border-box;padding:9px 12px;border-radius:6px;border:1.5px solid #ddd;font-size:0.87rem;margin-bottom:12px;outline:none;">
+
+    <label style="font-size:0.76rem;color:#4D6470;display:block;margin-bottom:4px;">Nama File di Repo</label>
+    <input id="ghPathInput" type="text" placeholder="index.html"
+      style="width:100%;box-sizing:border-box;padding:9px 12px;border-radius:6px;border:1.5px solid #ddd;font-size:0.87rem;margin-bottom:14px;outline:none;">
+
+    <div id="ghSetupStatus" style="font-size:0.78rem;min-height:18px;margin-bottom:12px;font-weight:500;"></div>
+
+    <div style="display:flex;gap:8px;">
+      <button id="ghSetupCancel" style="flex:1;padding:10px;border-radius:6px;border:none;font-size:0.83rem;cursor:pointer;background:rgba(16,37,48,0.08);color:#102530;">Batal</button>
+      <button id="ghSetupTest"   style="flex:1;padding:10px;border-radius:6px;border:none;font-size:0.83rem;cursor:pointer;background:#2E8B9E;color:#fff;">🔌 Test</button>
+      <button id="ghSetupSave"   style="flex:1;padding:10px;border-radius:6px;border:none;font-size:0.83rem;cursor:pointer;background:#C99A55;color:#102530;font-weight:700;">Simpan</button>
+    </div>
+  </div>
+</div>
+
 <script>
   /* ====================================================================
      SISTEM LOGIN: Netlify Identity (email + password akun Netlify kamu
@@ -2505,40 +2540,5 @@
     });
   }
 </script>
-<!-- Modal Setup GitHub -->
-<div id="ghSetupModal" style="position:fixed;inset:0;background:rgba(10,20,28,0.7);z-index:3100;display:none;align-items:center;justify-content:center;padding:20px;">
-  <div style="background:#fff;color:#102530;padding:28px;border-radius:10px;max-width:400px;width:100%;font-family:var(--sans);">
-    <h3 style="font-family:var(--display);font-size:1.05rem;margin-bottom:6px;">⚙️ Setup Publish Otomatis</h3>
-    <p style="font-size:0.78rem;color:#4D6470;margin-bottom:18px;">Isi sekali, tersimpan di browser ini. Kalau token habis masa berlaku, isi ulang di sini.</p>
-
-    <label style="font-size:0.76rem;color:#4D6470;display:block;margin-bottom:4px;">GitHub Personal Access Token</label>
-    <input id="ghTokenInput" type="password" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx"
-      style="width:100%;box-sizing:border-box;padding:9px 12px;border-radius:6px;border:1.5px solid #ddd;font-size:0.87rem;margin-bottom:5px;outline:none;">
-    <p style="font-size:0.72rem;color:#9FC2CB;margin-bottom:14px;">
-      Buat di: github.com → Settings → Developer settings → Personal access tokens → Classic → centang <b>repo</b>
-    </p>
-
-    <label style="font-size:0.76rem;color:#4D6470;display:block;margin-bottom:4px;">Username GitHub</label>
-    <input id="ghOwnerInput" type="text" placeholder="tedydyk31"
-      style="width:100%;box-sizing:border-box;padding:9px 12px;border-radius:6px;border:1.5px solid #ddd;font-size:0.87rem;margin-bottom:12px;outline:none;">
-
-    <label style="font-size:0.76rem;color:#4D6470;display:block;margin-bottom:4px;">Nama Repository</label>
-    <input id="ghRepoInput" type="text" placeholder="portofolio"
-      style="width:100%;box-sizing:border-box;padding:9px 12px;border-radius:6px;border:1.5px solid #ddd;font-size:0.87rem;margin-bottom:12px;outline:none;">
-
-    <label style="font-size:0.76rem;color:#4D6470;display:block;margin-bottom:4px;">Nama File di Repo</label>
-    <input id="ghPathInput" type="text" placeholder="index.html"
-      style="width:100%;box-sizing:border-box;padding:9px 12px;border-radius:6px;border:1.5px solid #ddd;font-size:0.87rem;margin-bottom:14px;outline:none;">
-
-    <div id="ghSetupStatus" style="font-size:0.78rem;min-height:18px;margin-bottom:12px;font-weight:500;"></div>
-
-    <div style="display:flex;gap:8px;">
-      <button id="ghSetupCancel" style="flex:1;padding:10px;border-radius:6px;border:none;font-size:0.83rem;cursor:pointer;background:rgba(16,37,48,0.08);color:#102530;">Batal</button>
-      <button id="ghSetupTest"   style="flex:1;padding:10px;border-radius:6px;border:none;font-size:0.83rem;cursor:pointer;background:#2E8B9E;color:#fff;">🔌 Test</button>
-      <button id="ghSetupSave"   style="flex:1;padding:10px;border-radius:6px;border:none;font-size:0.83rem;cursor:pointer;background:#C99A55;color:#102530;font-weight:700;">Simpan</button>
-    </div>
-  </div>
-</div>
-
 </body>
 </html>

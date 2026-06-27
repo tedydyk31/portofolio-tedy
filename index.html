@@ -1,0 +1,2544 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tedy Kurniawan — Portofolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg-deep:#0A2A40;
+    --bg-mid:#123F58;
+    --accent:#2E8B9E;
+    --accent-2:#7FD0DB;
+    --warm:#C99A55;
+    --ink:#102530;
+    --ink-soft:#4D6470;
+    --ink-dim:#9FC2CB;
+    --line-dark:rgba(255,255,255,0.16);
+    --display:'Space Grotesk', sans-serif;
+    --sans:'Inter', sans-serif;
+    --tex:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cg fill='none' stroke='rgba(255,255,255,0.07)' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='18' y='24' width='30' height='40' rx='3'/%3E%3Cline x1='23' y1='32' x2='43' y2='32'/%3E%3Cline x1='23' y1='40' x2='28' y2='40'/%3E%3Cline x1='32' y1='40' x2='37' y2='40'/%3E%3Cline x1='23' y1='47' x2='28' y2='47'/%3E%3Cline x1='32' y1='47' x2='37' y2='47'/%3E%3Cline x1='23' y1='54' x2='28' y2='54'/%3E%3Cline x1='32' y1='54' x2='37' y2='54'/%3E%3Crect x='150' y='40' width='72' height='16' rx='1' transform='rotate(-22 186 48)'/%3E%3Cline x1='158' y1='40' x2='160' y2='46' transform='rotate(-22 186 48)'/%3E%3Cline x1='168' y1='38' x2='170' y2='44' transform='rotate(-22 186 48)'/%3E%3Cline x1='178' y1='36' x2='180' y2='42' transform='rotate(-22 186 48)'/%3E%3Cline x1='188' y1='34' x2='190' y2='40' transform='rotate(-22 186 48)'/%3E%3Cline x1='198' y1='32' x2='200' y2='38' transform='rotate(-22 186 48)'/%3E%3Crect x='40' y='190' width='16' height='44'/%3E%3Crect x='60' y='170' width='20' height='64'/%3E%3Crect x='84' y='200' width='14' height='34'/%3E%3Cpath d='M150 234 L168 188 L206 188 L224 234 Z'/%3E%3Cline x1='160' y1='222' x2='216' y2='222'/%3E%3Cline x1='163' y1='210' x2='213' y2='210'/%3E%3C/g%3E%3C/svg%3E");
+    --custom-bg-img:none;
+    --custom-bg-opacity:0.55;
+    --custom-bg-overlay:rgba(10,42,64,0.45);
+    --custom-bg-size:cover;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:var(--sans);
+    background:var(--bg-deep);
+    color:#fff;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    position:relative;
+  }
+  /* Custom background image (upload sendiri) + overlay warna — fixed di belakang seluruh konten */
+  body::before{
+    content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+    background-image:var(--custom-bg-img);background-size:var(--custom-bg-size);
+    background-position:center;background-repeat:no-repeat;
+    opacity:var(--custom-bg-opacity);
+  }
+  body::after{
+    content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:var(--custom-bg-overlay);
+    display:var(--custom-bg-overlay-display,none);
+  }
+  nav, main, footer{position:relative;z-index:1;}
+  body.custom-bg-active .hero,
+  body.custom-bg-active .dark-section,
+  body.custom-bg-active #kontak,
+  body.custom-bg-active footer{ background-color:transparent !important; background-image:none !important; }
+  body.custom-bg-active nav{ background-color:rgba(10,42,64,0.55) !important; backdrop-filter:blur(6px); }
+  a{color:inherit;text-decoration:none;}
+  ul{list-style:none;}
+  ::selection{background:var(--accent);color:#fff;}
+  svg{display:block;}
+  .icon{width:22px;height:22px;stroke:currentColor;stroke-width:1.5;fill:none;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;}
+
+  .wrap{max-width:1080px;margin:0 auto;padding:0 32px;}
+
+  /* ===== NAV ===== */
+  nav{
+    position:fixed;top:0;left:0;right:0;z-index:1000;
+    background:rgba(10,42,64,0.88);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line-dark);
+  }
+  .nav-inner{max-width:1080px;margin:0 auto;padding:0 32px;height:64px;
+    display:flex;align-items:center;justify-content:space-between;color:#fff;}
+  .nav-brand{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:600;font-size:0.95rem;letter-spacing:0.3px;}
+  .nav-brand .icon{width:24px;height:24px;color:var(--accent-2);}
+  .nav-links{display:flex;gap:32px;font-size:0.82rem;letter-spacing:0.3px;color:#BFD9DF;}
+  .nav-links a:hover{color:var(--accent-2);}
+  .nav-pdf-btn{
+    background:transparent;border:1px solid var(--accent-2);color:var(--accent-2);
+    padding:7px 14px;border-radius:3px;font-size:0.78rem;letter-spacing:0.3px;
+    cursor:pointer;font-family:var(--sans);transition:background .2s,color .2s;
+  }
+  .nav-pdf-btn:hover{background:var(--accent-2);color:var(--bg-deep);}
+  .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;}
+  .nav-toggle span{width:20px;height:1.5px;background:#fff;}
+
+  /* ===== HERO ===== */
+  .hero{
+    background-image:var(--tex), linear-gradient(165deg,var(--bg-deep) 0%, var(--bg-mid) 60%, var(--accent) 130%);
+    background-repeat:repeat, no-repeat;
+    color:#fff;min-height:auto;display:flex;flex-direction:column;
+    padding:150px 0 90px;position:relative;overflow:hidden;
+  }
+  .hero-inner{position:relative;z-index:2;flex:1;display:flex;flex-direction:column;justify-content:center;}
+  .hero-kicker{
+    display:flex;align-items:center;gap:10px;
+    font-size:0.78rem;letter-spacing:2px;text-transform:uppercase;color:var(--accent-2);
+    margin-bottom:36px;
+  }
+  .hero-kicker .rule{width:36px;height:1px;background:var(--accent-2);opacity:.7;}
+  .hero-grid{display:grid;grid-template-columns:260px 1fr;gap:56px;align-items:center;}
+  .photo-frame{
+    position:relative;width:260px;height:260px;border-radius:50%;
+    border:1px solid rgba(255,255,255,0.3);overflow:hidden;flex-shrink:0;
+    background:linear-gradient(150deg,rgba(255,255,255,0.08),rgba(255,255,255,0.02));
+    display:flex;align-items:center;justify-content:center;
+    transition:border-radius .25s ease;
+  }
+  /* Pilihan bentuk frame foto profil */
+  .photo-frame.shape-circle{border-radius:50%;}
+  .photo-frame.shape-rounded{border-radius:24px;}
+  .photo-frame.shape-fillet{border-radius:48px;}
+  .photo-frame.shape-square{border-radius:6px;}
+  .photo-frame img{width:100%;height:100%;object-fit:cover;display:none;object-position:50% 50%;transform-origin:center center;}
+  .photo-frame img.has-photo{display:block;}
+  .photo-frame .placeholder-icon{color:rgba(255,255,255,0.35);width:64px;height:64px;}
+  .photo-frame .placeholder-icon.has-photo{display:none;}
+  .photo-overlay{
+    position:absolute;inset:0;background:rgba(10,42,64,0.72);color:#fff;
+    display:none;align-items:center;justify-content:center;text-align:center;
+    font-size:0.74rem;letter-spacing:0.5px;cursor:pointer;padding:10px;
+  }
+  body.edit-mode .photo-frame:hover .photo-overlay{display:flex;}
+  /* Reposition mode — muncul setelah foto diupload */
+  .photo-reposition{
+    position:absolute;inset:0;display:none;flex-direction:column;
+    align-items:center;justify-content:flex-end;padding-bottom:14px;gap:8px;
+    cursor:move;background:rgba(10,42,64,0.45);
+  }
+  .photo-reposition span{
+    font-size:0.68rem;color:#fff;background:rgba(0,0,0,0.45);
+    padding:3px 10px;border-radius:20px;pointer-events:none;letter-spacing:0.4px;
+  }
+  .photo-zoom-row{
+    display:flex;align-items:center;gap:8px;background:rgba(0,0,0,0.45);
+    padding:5px 12px;border-radius:20px;pointer-events:auto;cursor:default;
+  }
+  .photo-zoom-row span{background:none;padding:0;font-size:0.7rem;}
+  .photo-zoom-row input[type="range"]{width:90px;cursor:pointer;accent-color:var(--accent-2);}
+  .photo-shape-row{display:flex;align-items:center;gap:6px;pointer-events:auto;cursor:default;}
+  .photo-shape-row button{
+    width:24px;height:24px;border:1px solid rgba(255,255,255,0.4);background:rgba(0,0,0,0.35);
+    cursor:pointer;padding:0;
+  }
+  .photo-shape-row button.shape-circle{border-radius:50%;}
+  .photo-shape-row button.shape-rounded{border-radius:7px;}
+  .photo-shape-row button.shape-fillet{border-radius:11px;}
+  .photo-shape-row button.shape-square{border-radius:2px;}
+  .photo-shape-row button.active{border-color:var(--warm);background:rgba(201,154,85,0.35);}
+  .photo-reposition #photoDone{
+    background:var(--warm);color:var(--bg-deep);border:none;
+    padding:6px 18px;border-radius:4px;font-size:0.78rem;font-weight:700;cursor:pointer;
+  }
+  body.edit-mode .photo-frame.repositioning .photo-reposition{display:flex;}
+  body.edit-mode .photo-frame.repositioning .photo-overlay{display:none !important;}
+  body.edit-mode .photo-frame.repositioning img{cursor:move !important;}
+  .hero h1{
+    font-family:var(--display);font-weight:700;letter-spacing:-1px;
+    font-size:clamp(2.2rem,5.5vw,3.6rem);line-height:1.05;
+  }
+  .hero-about{margin-top:16px;max-width:540px;color:#C7DEE3;font-size:1.02rem;line-height:1.65;}
+  .hero-line{
+    margin-top:18px;font-family:var(--display);font-size:1rem;color:var(--accent-2);
+    letter-spacing:0.2px;max-width:540px;line-height:1.5;
+  }
+  .hero-cta{margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap;}
+  .btn-solid{
+    background:var(--warm);color:var(--bg-deep);padding:14px 30px;
+    font-size:0.88rem;letter-spacing:0.3px;font-weight:600;border-radius:2px;transition:background .2s;
+  }
+  .link-arrow{
+    font-size:0.88rem;color:#C7DEE3;border-bottom:1px solid rgba(255,255,255,0.35);
+    padding-bottom:3px;transition:color .2s,border-color .2s;
+  }
+  .link-arrow:hover{color:var(--accent-2);border-color:var(--accent-2);}
+
+  /* ===== SECTION shared ===== */
+  section{padding:100px 0 90px;position:relative;}
+  .dark-section{background-image:var(--tex);background-repeat:repeat;background-color:var(--bg-deep);color:#fff;}
+  .eyebrow{
+    display:flex;align-items:center;gap:14px;margin-bottom:50px;
+    font-size:0.78rem;letter-spacing:2px;text-transform:uppercase;color:var(--ink-dim);
+  }
+  .eyebrow .icon{width:18px;height:18px;color:var(--accent-2);}
+  .sec-title{
+    font-family:var(--display);font-weight:700;letter-spacing:-0.5px;
+    font-size:clamp(1.9rem,4vw,3rem);line-height:1.08;margin-bottom:26px;
+  }
+  .sec-lede{max-width:560px;font-size:1.02rem;color:var(--ink-dim);}
+
+  /* ===== KARYA ===== */
+  .role-block{margin-bottom:88px;}
+  .role-block:last-child{margin-bottom:0;}
+  .role-head{
+    display:flex;align-items:center;gap:16px;flex-wrap:wrap;
+    margin-bottom:28px;border-bottom:1px solid var(--line-dark);padding-bottom:22px;
+  }
+  .role-head .icon{width:30px;height:30px;color:var(--accent-2);}
+  .role-name{font-family:var(--display);font-weight:600;font-size:clamp(1.25rem,3vw,1.7rem);}
+  .role-meta{margin-left:auto;font-size:0.76rem;letter-spacing:1.5px;color:var(--accent-2);text-transform:uppercase;}
+  .project-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px;}
+  .project-card{
+    position:relative;border:1px solid var(--line-dark);padding:26px;
+    display:flex;flex-direction:column;gap:14px;background:rgba(255,255,255,0.02);
+    transition:border-color .2s,background .2s;
+  }
+  .project-card:hover{border-color:var(--accent-2);background:rgba(255,255,255,0.05);}
+  .project-card .icon{width:26px;height:26px;color:var(--accent-2);}
+  .project-card h4{font-size:1.04rem;font-weight:600;}
+  .project-card p{color:var(--ink-dim);font-size:0.9rem;}
+  .card-meta{
+    display:flex;flex-wrap:wrap;gap:8px 14px;font-size:0.78rem;
+    color:var(--accent-2);letter-spacing:0.2px;
+  }
+  .card-meta .meta-item{display:flex;align-items:center;gap:5px;}
+  .card-meta .meta-item .icon{width:14px;height:14px;flex-shrink:0;color:var(--accent-2);}
+  .card-meta .meta-item[data-editable]{outline-offset:2px;}
+  .card-delete{
+    display:none;position:absolute;top:10px;right:10px;width:24px;height:24px;
+    border-radius:50%;border:1px solid var(--line-dark);background:rgba(0,0,0,0.3);
+    color:#fff;cursor:pointer;font-size:14px;line-height:1;align-items:center;justify-content:center;z-index:3;
+  }
+  body.edit-mode .card-delete{display:flex;}
+  .card-links{display:flex;align-items:center;gap:10px;margin-top:4px;}
+  .proof-link{font-size:0.85rem;color:var(--warm);border-bottom:1px solid rgba(201,154,85,0.4);padding-bottom:1px;}
+  .proof-link.no-link{color:var(--ink-dim);border-bottom-color:transparent;font-style:italic;cursor:default;}
+  .edit-url-btn{
+    display:none;width:22px;height:22px;border-radius:50%;border:1px solid var(--line-dark);
+    background:rgba(255,255,255,0.06);color:var(--accent-2);font-size:11px;cursor:pointer;
+    align-items:center;justify-content:center;flex-shrink:0;
+  }
+  body.edit-mode .edit-url-btn{display:flex;}
+  .add-card-btn{
+    display:none;align-items:center;justify-content:center;gap:8px;
+    border:1px dashed var(--line-dark);padding:26px;min-height:120px;width:100%;
+    font-size:0.85rem;color:var(--ink-dim);cursor:pointer;background:transparent;margin-top:18px;
+  }
+  .add-card-btn:hover{border-color:var(--accent-2);color:var(--accent-2);}
+
+  /* ===== KEAHLIAN / SOFTWARE ===== */
+  .skill-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:20px;}
+  .skill-card{
+    position:relative;border:1px solid var(--line-dark);padding:22px 18px;border-radius:6px;
+    display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center;
+    background:rgba(255,255,255,0.02);transition:border-color .2s,background .2s;
+  }
+  .skill-card:hover{border-color:var(--accent-2);background:rgba(255,255,255,0.05);}
+  .skill-logo{
+    width:64px;height:64px;border-radius:12px;background:rgba(255,255,255,0.06);
+    display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;
+    border:1px solid var(--line-dark);position:relative;overflow:hidden;
+  }
+  body.edit-mode .skill-logo:hover{border-color:var(--warm);}
+  .skill-logo .placeholder-icon{width:28px;height:28px;color:var(--accent-2);}
+  .skill-logo .placeholder-icon.has-photo{display:none;}
+  .skill-logo img{width:100%;height:100%;object-fit:contain;padding:8px;display:none;}
+  .skill-logo img.has-photo{display:block;}
+  .skill-logo::after{
+    content:'Ganti logo';position:absolute;inset:0;background:rgba(10,42,64,0.78);color:#fff;
+    font-size:0.6rem;display:none;align-items:center;justify-content:center;text-align:center;padding:4px;
+  }
+  body.edit-mode .skill-logo:hover::after{display:flex;}
+  .skill-card h4{font-size:0.92rem;font-weight:600;}
+  .skill-desc{font-size:0.78rem;color:var(--ink-dim);line-height:1.5;}
+  .skill-desc:empty::before{content:'Tambahkan uraian singkat (opsional)';opacity:0.5;font-style:italic;}
+  body.edit-mode .skill-desc:empty::before{display:inline;}
+  body:not(.edit-mode) .skill-desc:empty{display:none;}
+  .skill-level{display:flex;gap:5px;}
+  .skill-level .lv-dot{
+    width:11px;height:11px;border-radius:50%;background:var(--line-dark);
+    border:1px solid var(--line-dark);transition:background .15s,border-color .15s;
+  }
+  .skill-level .lv-dot.lv-on{background:var(--accent-2);border-color:var(--accent-2);}
+  body.edit-mode .skill-level{cursor:pointer;}
+  .skill-level-label{font-size:0.7rem;letter-spacing:0.5px;color:var(--ink-dim);text-transform:uppercase;}
+  #btnAddSkill{margin-top:24px;}
+  body.edit-mode .add-card-btn{display:flex;}
+
+  /* ===== SISTEM BAB (penomoran otomatis & tambah bab/sub-bab) ===== */
+  .bab-eyebrow{margin-bottom:14px;}
+  /* Nomor Bab/Sub-Bab (Bab 1, Bab 2, 1.1, 2.1, dst) disembunyikan dari tampilan,
+     tapi tetap dihitung di JS (renumberBabAndSubbab) untuk keperluan internal/print. */
+  .subbab-number-label, .bab-number-label{font-weight:700;display:none;}
+  .subbab-delete{
+    display:none;width:24px;height:24px;border-radius:50%;border:1px solid var(--line-dark);
+    background:rgba(0,0,0,0.25);color:#fff;cursor:pointer;font-size:14px;line-height:1;
+    align-items:center;justify-content:center;flex-shrink:0;
+  }
+  body.edit-mode .subbab-delete{display:flex;}
+  .add-subbab-btn{
+    display:none;align-items:center;justify-content:center;gap:8px;
+    border:1px dashed var(--accent-2);padding:18px;width:100%;border-radius:4px;
+    font-size:0.85rem;color:var(--accent-2);cursor:pointer;background:transparent;margin-top:32px;
+  }
+  .add-subbab-btn:hover{background:rgba(127,208,219,0.08);}
+  body.edit-mode .add-subbab-btn{display:flex;}
+  .add-bab-zone{padding:0;display:none;}
+  body.edit-mode .add-bab-zone{display:block;padding:50px 0;}
+  .add-bab-btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    border:1px dashed var(--warm);padding:20px 40px;border-radius:4px;
+    font-size:0.92rem;color:var(--warm);cursor:pointer;background:transparent;font-weight:600;
+  }
+  .add-bab-btn:hover{background:rgba(201,154,85,0.1);}
+  .bab-delete-btn{
+    display:none;position:absolute;top:24px;right:32px;width:30px;height:30px;border-radius:50%;
+    border:1px solid var(--line-dark);background:rgba(0,0,0,0.25);color:#fff;cursor:pointer;
+    font-size:15px;line-height:1;align-items:center;justify-content:center;z-index:5;
+  }
+  body.edit-mode .bab-delete-btn{display:flex;}
+
+  /* ===== KONTAK ===== */
+  #kontak{background-image:var(--tex);background-repeat:repeat;background-color:var(--bg-mid);}
+  .contact-band{text-align:center;}
+  .contact-band .eyebrow{justify-content:center;}
+  .contact-band .sec-title{font-size:clamp(2rem,5.5vw,3.6rem);}
+  .contact-links{
+    display:flex;justify-content:center;gap:0;flex-wrap:wrap;
+    margin-top:50px;border-top:1px solid var(--line-dark);
+  }
+  .contact-link{
+    flex:1;min-width:220px;padding:30px 20px;border-right:1px solid var(--line-dark);
+    border-bottom:1px solid var(--line-dark);transition:background .2s;
+    display:flex;flex-direction:column;align-items:center;gap:10px;position:relative;
+  }
+  .contact-link:last-child{border-right:none;}
+  .contact-link:hover{background:rgba(255,255,255,0.05);}
+  .contact-link .icon{color:var(--accent-2);width:22px;height:22px;}
+  .contact-link .cl-label{font-size:0.7rem;letter-spacing:2px;color:var(--ink-dim);}
+  .contact-link .cl-val{font-family:var(--display);font-weight:600;font-size:1.05rem;}
+  .contact-link .edit-url-btn{position:absolute;top:10px;right:10px;}
+
+  /* ===== FOOTER ===== */
+  footer{background-image:var(--tex);background-repeat:repeat;background-color:var(--bg-deep);color:var(--ink-dim);padding:34px 0 44px;}
+  .footer-inner{display:flex;justify-content:space-between;align-items:center;font-size:0.78rem;flex-wrap:wrap;gap:10px;}
+
+  /* ===== EDITABLE TEXT ===== */
+  [contenteditable="false"]{outline:none;border-radius:2px;}
+  body.edit-mode [data-editable]{cursor:text;}
+  body.edit-mode [data-editable]:hover{box-shadow:0 0 0 1px var(--accent-2);}
+  [contenteditable="false"]:focus{box-shadow:0 0 0 2px var(--warm);background:rgba(255,255,255,0.06);}
+
+  /* ===== JUSTIFIED TEXT (box tetap, teks rapi kanan-kiri otomatis) ===== */
+  .hero-about, .project-card p, .sec-lede{ text-align:justify; text-justify:inter-word; }
+  body.edit-mode [data-editable]{ word-break:break-word; overflow-wrap:break-word; }
+  [data-editable] ul, [data-editable] ol{ margin:8px 0 8px 0; padding-left:1.4em; }
+  [data-editable] li{ margin-bottom:5px; padding-left:0.2em; }
+  [data-editable] li::marker{ color:var(--accent-2); font-weight:600; }
+  [data-editable] b, [data-editable] strong{ font-weight:700; }
+  [data-editable] i, [data-editable] em{ font-style:italic; }
+  [data-editable] u{ text-decoration:underline; }
+  /* rata kiri/kanan/kanan-kiri yang bisa dipilih lewat toolbar */
+  [data-editable][data-align="left"]{ text-align:left !important; }
+  [data-editable][data-align="right"]{ text-align:right !important; }
+  [data-editable][data-align="justify"]{ text-align:justify !important; text-justify:inter-word; }
+  [data-editable][data-align="center"]{ text-align:center !important; }
+
+  /* ===== FLOATING TEXT TOOLBAR (bold/italic/underline/list/font) ===== */
+  #textToolbar{
+    position:fixed;top:72px;left:50%;transform:translateX(-50%);
+    display:none;gap:4px;background:var(--bg-deep);
+    border:1px solid var(--accent-2);border-radius:8px;padding:6px;
+    box-shadow:0 8px 24px rgba(0,0,0,0.45);z-index:2600;align-items:center;
+    flex-wrap:wrap;max-width:min(380px,calc(100vw - 16px));justify-content:center;
+  }
+  #textToolbar.show{display:flex;}
+  #textToolbar button{
+    width:30px;height:30px;border-radius:5px;border:1px solid var(--line-dark);
+    background:rgba(255,255,255,0.06);color:#fff;cursor:pointer;font-size:13px;flex-shrink:0;
+  }
+  #textToolbar button:hover, #textToolbar button.active{border-color:var(--accent-2);color:var(--accent-2);}
+  #textToolbar .tb-sep{width:1px;height:20px;background:var(--line-dark);margin:0 2px;flex-shrink:0;}
+  #textToolbar select{
+    height:30px;border-radius:5px;border:1px solid var(--line-dark);
+    background:rgba(255,255,255,0.06);color:#fff;font-size:11px;max-width:104px;flex-shrink:0;
+  }
+  #textToolbar select option, #editToolbar select option{
+    background:#0e2230;color:#fff;
+  }
+  .tb-color-label{
+    width:30px;height:30px;border-radius:5px;border:1px solid var(--line-dark);
+    overflow:hidden;cursor:pointer;flex-shrink:0;display:flex;
+  }
+  .tb-color-label input[type="color"]{width:38px;height:38px;border:none;margin:-4px;cursor:pointer;padding:0;}
+
+  /* ===== MULTI DOCUMENTATION GALLERY (rasio mengikuti foto asli, tidak di-crop) ===== */
+  .doc-gallery{margin-top:10px;display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:8px;align-items:start;}
+  .doc-thumb{
+    position:relative;width:100%;border-radius:4px;overflow:hidden;flex-shrink:0;
+    border:1px solid var(--line-dark);cursor:zoom-in;background:rgba(255,255,255,0.03);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .doc-thumb img{width:100%;height:auto;display:block;object-fit:contain;}
+  .doc-thumb .thumb-del{
+    display:none;position:absolute;top:4px;right:4px;width:22px;height:22px;border-radius:50%;
+    background:rgba(0,0,0,0.6);color:#fff;border:none;font-size:13px;line-height:1;cursor:pointer;
+    align-items:center;justify-content:center;z-index:2;
+  }
+  body.edit-mode .doc-thumb .thumb-del{display:flex;}
+  .doc-add{
+    width:100%;aspect-ratio:4/3;flex-shrink:0;border:1px dashed var(--line-dark);border-radius:4px;
+    display:none;align-items:center;justify-content:center;font-size:1.6rem;color:var(--ink-dim);
+    cursor:pointer;background:transparent;
+  }
+  body.edit-mode .doc-add{display:flex;}
+  .doc-add:hover{border-color:var(--accent-2);color:var(--accent-2);}
+  .doc-empty-note{font-size:0.74rem;color:var(--ink-dim);font-style:italic;}
+  body.edit-mode .doc-empty-note{display:none;}
+
+  /* ===== LIGHTBOX untuk lihat dokumentasi ukuran penuh ===== */
+  #lightbox{position:fixed;inset:0;background:rgba(5,12,18,0.92);z-index:3500;display:none;align-items:center;justify-content:center;padding:30px;cursor:zoom-out;}
+  #lightbox.open{display:flex;}
+  #lightbox img{max-width:92vw;max-height:88vh;border-radius:4px;box-shadow:0 20px 60px rgba(0,0,0,0.5);}
+  #lightbox .lb-close{position:absolute;top:20px;right:26px;color:#fff;font-size:2rem;background:none;border:none;cursor:pointer;line-height:1;}
+
+  /* ===== UNDO / REDO BAR ===== */
+  #undoRedoBar{
+    position:fixed;left:18px;bottom:18px;z-index:1950;display:none;gap:8px;
+  }
+  body.edit-mode #undoRedoBar{display:flex;}
+  #undoRedoBar button{
+    background:var(--bg-deep);color:#fff;border:1px solid var(--line-dark);
+    padding:10px 16px;border-radius:6px;font-size:0.8rem;cursor:pointer;
+    box-shadow:0 6px 16px rgba(0,0,0,0.3);transition:border-color .15s,opacity .15s;
+  }
+  #undoRedoBar button:hover:not(:disabled){border-color:var(--accent-2);color:var(--accent-2);}
+  #undoRedoBar button:disabled{opacity:0.35;cursor:not-allowed;}
+
+  /* ===== DRAG TO REORDER (Bab, Sub-Bab, Kartu Proyek) ===== */
+  /* ===== ICON WRAP — klik ikon untuk ganti dengan PNG custom (mode edit) ===== */
+  .icon-wrap{
+    position:relative;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;
+    width:30px;height:30px;cursor:default;
+  }
+  .icon-wrap .icon{ width:100%;height:100%; }
+  .icon-wrap .custom-icon{
+    width:100%;height:100%;object-fit:contain;display:none;
+  }
+  .icon-wrap .custom-icon.active{ display:block; }
+  .icon-wrap:has(.custom-icon.active) .icon{ display:none; }
+  .icon-wrap.has-custom-icon .icon{ display:none; }
+  .icon-wrap::after{
+    content:"↑";position:absolute;inset:0;background:rgba(10,42,64,0.7);
+    color:var(--aqua);font-size:11px;display:none;align-items:center;justify-content:center;
+    border-radius:4px;cursor:pointer;
+  }
+  body.edit-mode .icon-wrap:hover::after{ display:flex; }
+  /* Ukuran icon-wrap di role-head lebih besar */
+  .role-head .icon-wrap{ width:30px;height:30px; }
+  .project-card .icon-wrap{ width:26px;height:26px; }
+  .card-meta .icon-wrap{ width:14px;height:14px; }
+  .eyebrow .icon-wrap{ width:18px;height:18px; }
+  .contact-link .icon-wrap{ width:22px;height:22px; }
+  footer .icon-wrap{ width:22px;height:22px; }
+  /* Sembunyikan tooltip upload saat print */
+  @media print{ .icon-wrap::after{ display:none !important; } }
+
+  .drag-handle{
+    display:none;position:absolute;top:24px;left:32px;width:30px;height:30px;border-radius:6px;
+    border:1px solid var(--line-dark);background:rgba(0,0,0,0.25);color:#fff;cursor:grab;
+    align-items:center;justify-content:center;font-size:14px;line-height:1;z-index:5;flex-shrink:0;
+  }
+  body.edit-mode [data-bab] > .drag-handle{display:flex;}
+  .role-head .drag-handle, .project-card .drag-handle{
+    position:static;width:26px;height:26px;margin-right:2px;border-radius:5px;
+  }
+  body.edit-mode .role-head .drag-handle, body.edit-mode .project-card .drag-handle{display:flex;}
+  .drag-handle:hover{border-color:var(--warm);color:var(--warm);}
+  [draggable="true"].dragging{opacity:0.4;}
+  .drag-over-top{box-shadow:inset 0 3px 0 0 var(--warm);}
+  .drag-over-bottom{box-shadow:inset 0 -3px 0 0 var(--warm);}
+
+  /* ===== EDIT PANEL (hidden by default — no visible trigger for visitors) ===== */
+  #editToolbar{
+    position:fixed;right:18px;bottom:18px;z-index:2000;
+    display:none;flex-direction:column;gap:10px;background:var(--bg-deep);
+    border:1px solid var(--line-dark);border-radius:10px;padding:16px;
+    box-shadow:0 10px 26px rgba(0,0,0,0.35);width:240px;font-family:var(--sans);
+    max-height:min(620px,82vh);overflow:auto;transition:width .2s,height .2s,padding .2s,border-radius .2s;
+  }
+  body.edit-mode #editToolbar{display:flex;}
+  .toolbar-header{display:flex;align-items:center;justify-content:space-between;flex-shrink:0;}
+  .toolbar-header h5{margin:0;}
+  #toolbarMinimize{
+    width:28px;height:28px;flex-shrink:0;border-radius:50%;padding:0;
+    display:flex;align-items:center;justify-content:center;font-size:16px;line-height:1;
+  }
+  #editToolbar.collapsed{
+    width:auto;max-height:none;padding:0;border-radius:50%;overflow:visible;
+    box-shadow:0 6px 16px rgba(0,0,0,0.35);
+  }
+  #editToolbar.collapsed #toolbarBody{display:none;}
+  #editToolbar.collapsed .toolbar-header{padding:0;}
+  #editToolbar.collapsed .toolbar-header h5{display:none;}
+  #editToolbar.collapsed #toolbarMinimize{width:52px;height:52px;font-size:22px;border-radius:50%;background:var(--warm);color:var(--bg-deep);border-color:var(--warm);}
+  #editToolbar h5{font-family:var(--display);font-size:0.8rem;color:var(--accent-2);letter-spacing:0.5px;margin-top:6px;}
+  #editToolbar h5:first-child{margin-top:0;}
+  #editToolbar select, #editToolbar input[type="color"]{
+    width:100%;padding:8px;border-radius:6px;border:1px solid var(--line-dark);
+    background:rgba(255,255,255,0.06);color:#fff;font-size:0.78rem;
+  }
+  #editToolbar input[type="range"]{width:100%;accent-color:var(--accent-2);margin-top:4px;}
+  #customBgPanel{border-top:1px dashed var(--line-dark);margin-top:10px;padding-top:10px;}
+  #editToolbar button{
+    background:rgba(255,255,255,0.06);color:#fff;border:1px solid var(--line-dark);
+    padding:10px 12px;border-radius:6px;font-size:0.78rem;cursor:pointer;text-align:left;
+  }
+  #editToolbar button:hover{border-color:var(--accent-2);}
+  #editToolbar .save-btn{background:var(--warm);color:var(--bg-deep);border-color:var(--warm);font-weight:600;}
+  #editToolbar .status{font-size:0.7rem;color:var(--accent-2);line-height:1.5;}
+  #editToolbar .color-row{display:flex;gap:8px;align-items:center;}
+  #editToolbar .color-row label{font-size:0.74rem;color:var(--ink-dim);flex:1;}
+  #editToolbar input[type="color"]{width:36px;padding:2px;height:28px;flex-shrink:0;}
+  #toolbarBody{display:flex;flex-direction:column;gap:10px;overflow:auto;}
+
+  #pwModal{
+    position:fixed;inset:0;background:rgba(10,20,28,0.6);z-index:3000;
+    display:none;align-items:center;justify-content:center;padding:20px;
+  }
+  #pwModal.open{display:flex;}
+  .pw-box{background:#fff;color:var(--ink);padding:30px;border-radius:8px;max-width:320px;width:100%;}
+  .pw-box h3{font-family:var(--display);font-size:1.05rem;margin-bottom:14px;}
+  .pw-box .pw-sub{font-size:0.82rem;color:var(--ink-soft);margin-bottom:16px;line-height:1.5;}
+  .pw-box input{
+    width:100%;padding:11px 12px;border:1px solid rgba(16,37,48,0.12);border-radius:4px;
+    font-size:0.9rem;margin-bottom:14px;
+  }
+  .pw-box .pw-actions{display:flex;gap:10px;}
+  .pw-box button{flex:1;padding:10px;border-radius:4px;border:none;font-size:0.84rem;cursor:pointer;}
+  .pw-box .pw-confirm{background:var(--accent);color:#fff;}
+  .pw-box .pw-cancel{background:rgba(16,37,48,0.08);color:var(--ink);}
+  .pw-error{color:#c0392b;font-size:0.78rem;margin-top:-8px;margin-bottom:10px;display:none;}
+
+  /* ===== ICON PICKER MODAL (pilih ikon preset atau upload PNG custom) ===== */
+  #iconPickerModal{
+    position:fixed;inset:0;background:rgba(10,20,28,0.6);z-index:3000;
+    display:none;align-items:center;justify-content:center;padding:20px;
+  }
+  #iconPickerModal.open{display:flex;}
+  .icon-picker-box{background:#fff;color:var(--ink);padding:26px;border-radius:8px;max-width:420px;width:100%;max-height:80vh;display:flex;flex-direction:column;}
+  .icon-picker-box h3{font-family:var(--display);font-size:1.05rem;margin-bottom:4px;}
+  .icon-picker-sub{font-size:0.78rem;color:var(--ink-soft);margin-bottom:16px;}
+  .icon-picker-grid{
+    display:grid;grid-template-columns:repeat(5,1fr);gap:10px;overflow-y:auto;padding:2px;margin-bottom:16px;
+  }
+  .icon-picker-item{
+    aspect-ratio:1;border:1px solid rgba(16,37,48,0.14);border-radius:6px;background:rgba(16,37,48,0.03);
+    display:flex;align-items:center;justify-content:center;cursor:pointer;transition:border-color .15s,background .15s;
+  }
+  .icon-picker-item:hover{border-color:var(--accent);background:rgba(46,139,158,0.08);}
+  .icon-picker-item.selected{border-color:var(--accent);background:rgba(46,139,158,0.14);}
+  .icon-picker-item svg{width:22px;height:22px;color:var(--ink);stroke:currentColor;stroke-width:1.5;fill:none;}
+  .icon-picker-actions{display:flex;gap:10px;border-top:1px solid rgba(16,37,48,0.1);padding-top:14px;}
+  .icon-picker-actions button{
+    flex:1;padding:10px;border-radius:4px;border:none;font-size:0.82rem;cursor:pointer;font-family:var(--sans);
+  }
+  .icon-picker-upload{background:var(--warm);color:var(--bg-deep);font-weight:600;}
+  .icon-picker-cancel{background:rgba(16,37,48,0.08);color:var(--ink);}
+  .icon-picker-reset{background:rgba(192,57,43,0.1);color:#c0392b;}
+
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity .65s ease,transform .65s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1;transform:none;transition:none;}
+    html{scroll-behavior:auto;}
+  }
+  a:focus-visible,.nav-toggle:focus-visible{outline:2px solid var(--accent-2);outline-offset:3px;}
+
+  @media (max-width:820px){
+    .hero-grid{grid-template-columns:1fr;text-align:center;justify-items:center;}
+    .project-grid{grid-template-columns:1fr;}
+    .contact-link{min-width:100%;border-right:none;}
+    .role-meta{margin-left:0;}
+    .nav-links{
+      position:fixed;top:64px;right:0;height:calc(100vh - 64px);
+      background:var(--bg-deep);flex-direction:column;width:220px;padding:30px 28px;gap:24px;
+      border-left:1px solid var(--line-dark);transform:translateX(100%);transition:transform .3s;
+    }
+    .nav-links.open{transform:translateX(0);}
+    .nav-toggle{display:flex;}
+    .hero{padding:110px 0 60px;}
+    section{padding:90px 0 80px;}
+    #editToolbar{right:10px;bottom:10px;width:calc(100vw - 20px);}
+    #editToolbar.collapsed{width:52px;}
+  }
+
+  /* ===== MODE CETAK / EXPORT PDF — A4 Landscape ====================
+     Struktur: 1) Profil = 1 halaman sendiri. 2) Tiap proyek/pengalaman
+     = 1 halaman sendiri (boleh banyak halaman). 3) Dokumentasi tampil
+     sesuai rasio asli foto (tidak di-crop/dipotong). 4) Kontak = halaman
+     penutup. Tema gelap asli dipertahankan, semua link tetap aktif.
+  =================================================================== */
+  .print-only-tag{ display:none; }
+
+  @media print{
+    /* margin:0 menghilangkan header/footer browser: tanggal, nama file, URL, lokasi simpan */
+    @page{ size:A4 landscape; margin:0; }
+    *{ -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; color-adjust:exact !important; }
+    html, body{ background:var(--bg-deep) !important; color:#fff !important; font-size:11pt; margin:0 !important; padding:0 !important; }
+    .wrap{ max-width:100% !important; padding:0 14mm !important; }
+    nav, #editToolbar, #pwModal, #iconPickerModal, #textToolbar, #lightbox, .nav-toggle, .card-delete,
+    .add-card-btn, .add-subbab-btn, .add-bab-btn, .add-bab-zone, .subbab-delete, .bab-delete-btn,
+    .edit-url-btn, .doc-add, .thumb-del, .photo-overlay, .photo-reposition, .drag-handle, footer{ display:none !important; }
+    .reveal{ opacity:1 !important; transform:none !important; }
+    a{ text-decoration:none !important; }
+
+    /* PROFIL: 1 halaman penuh, tidak terpotong */
+    .hero{
+      min-height:100vh !important; height:100vh !important; padding:14mm 0 !important;
+      display:flex !important; flex-direction:column !important; justify-content:center !important;
+      page-break-after:always !important; break-after:page !important;
+      page-break-inside:avoid !important; break-inside:avoid !important;
+      overflow:hidden !important; box-sizing:border-box !important;
+    }
+    .hero-inner{ display:block !important; }
+    .hero-kicker{ margin-bottom:22px !important; font-size:11pt !important; }
+    .hero-grid{ display:grid !important; grid-template-columns:230px 1fr !important; gap:46px !important; align-items:center !important; }
+    .photo-frame{ width:230px !important; height:230px !important; }
+    .hero h1{ font-size:34pt !important; line-height:1.08 !important; }
+    .hero-about{ font-size:13pt !important; margin-top:16px !important; max-width:100% !important; line-height:1.6 !important; }
+    .hero-line{ font-size:12.5pt !important; margin-top:16px !important; }
+    .hero-cta{ display:none !important; }
+
+    /* Judul Bab TIDAK dipaksa pindah ke halaman baru sendiri — supaya judul
+       tidak terpisah halaman dari isi/kartunya. Page-break tetap terjadi secara
+       alami di antar-kartu (lihat .project-card di bawah) dan tiap kartu proyek
+       tetap 1 halaman penuh; judul Bab + cover akan menempel pada halaman
+       terakhir yang tersisa atau lanjut mengalir mengikuti konten. */
+    .bab-section{ padding:0 !important; page-break-before:always !important; break-before:page !important; }
+    .bab-section > .wrap{ padding-top:14mm !important; padding-bottom:0 !important; }
+    .print-cover{
+      padding:0 0 16mm 0 !important;
+      display:block !important;
+      page-break-after:avoid !important; break-after:avoid !important;
+      page-break-inside:avoid !important; break-inside:avoid !important;
+      box-sizing:border-box !important;
+    }
+    .eyebrow{ margin-bottom:18px !important; font-size:10pt !important; }
+    .sec-title{ font-size:30pt !important; margin-bottom:14px !important; }
+    .sec-lede{ font-size:12.5pt !important; max-width:80% !important; }
+    div[style*="height:56px"], div[style*="height:48px"]{ display:none !important; }
+    .role-head{ display:none !important; }
+    .role-block{ margin-bottom:0 !important; }
+
+    /* Tiap kartu proyek = 1 halaman sendiri, tidak terpotong */
+    .project-grid{ display:block !important; }
+    .print-only-tag{ display:none !important; }
+    .bab-number-label, .subbab-number-label{ display:none !important; }
+    .project-card{
+      min-height:100vh !important; height:100vh !important; box-sizing:border-box !important;
+      display:flex !important; flex-direction:column !important; gap:14px !important;
+      padding:14mm 14mm 10mm !important; border:none !important; background:none !important;
+      page-break-after:always !important; break-after:page !important;
+      page-break-inside:avoid !important; break-inside:avoid !important;
+      overflow:hidden !important;
+    }
+    .project-card.print-last-in-bab{ page-break-after:avoid !important; break-after:avoid !important; }
+    .project-card .icon{ width:28px !important; height:28px !important; }
+    .project-card h4{ font-size:18pt !important; }
+    .project-card p{ font-size:12pt !important; line-height:1.6 !important; text-align:left !important; max-width:90%; }
+    .card-links{ margin-top:2px !important; }
+    .proof-link{ font-size:11pt !important; }
+    a.proof-link[href="#"]{ display:none !important; }
+    .proof-link:not([href="#"])::after{ content:" — " attr(href); font-size:9.5pt; word-break:break-all; color:var(--ink-dim); }
+
+    /* Dokumentasi: tampil sesuai rasio asli */
+    .doc-gallery{ display:grid !important; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)) !important; gap:10px !important; margin-top:6px !important; align-content:start !important; }
+    .doc-thumb{ border-color:rgba(255,255,255,0.22) !important; aspect-ratio:auto !important; height:auto !important; display:flex !important; align-items:center !important; justify-content:center !important; background:rgba(255,255,255,0.03) !important; max-height:62mm !important; }
+    .doc-thumb img{ width:auto !important; height:auto !important; max-width:100% !important; max-height:62mm !important; object-fit:contain !important; }
+    .doc-empty-note{ font-size:9.5pt !important; }
+
+    /* BAB Keahlian: grid tetap di 1 halaman */
+    #bab-keahlian .skill-grid{ display:grid !important; grid-template-columns:repeat(5,1fr) !important; gap:14px !important; margin-top:20px !important; page-break-inside:avoid !important; }
+    .skill-card{ padding:16px 10px !important; gap:8px !important; border-color:rgba(255,255,255,0.22) !important; page-break-inside:avoid !important; }
+    .skill-logo{ width:48px !important; height:48px !important; border-radius:8px !important; }
+    .skill-logo::after{ display:none !important; }
+    .skill-card h4{ font-size:9.5pt !important; }
+    .skill-desc{ font-size:7.5pt !important; line-height:1.35 !important; }
+    .skill-level .lv-dot{ width:8px !important; height:8px !important; }
+    .skill-level-label{ font-size:7pt !important; }
+
+    /* Kontak: halaman penutup */
+    #kontak{ min-height:100vh !important; height:100vh !important; display:flex !important; flex-direction:column !important; justify-content:center !important; page-break-before:always !important; break-before:page !important; padding:14mm 0 !important; box-sizing:border-box !important; overflow:hidden !important; }
+    .contact-band .sec-title{ font-size:26pt !important; }
+    .contact-links{ margin-top:30px !important; }
+    .contact-link{ padding:20px 14px !important; }
+    .contact-link .icon{ width:26px !important; height:26px !important; }
+    .contact-link .cl-label{ font-size:8pt !important; }
+    .contact-link .cl-val{ font-size:13pt !important; }
+  }
+</style>
+<!-- Netlify Identity: sistem login email+password resmi dari Netlify.
+     Email & password TIDAK pernah tersimpan di kode ini — semua verifikasi
+     dilakukan oleh server Netlify. Lihat NETLIFY-IDENTITY-SETUP.md untuk
+     cara mengaktifkannya di dashboard Netlify (wajib dilakukan sebelum
+     login ini berfungsi). -->
+<!-- Netlify Identity dihapus — login kini pakai kata sandi lokal (localStorage) -->
+</head>
+<body>
+
+<!-- ICON LIBRARY -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="6" r="1.6"/><path d="M12 7.6 L6 19 M12 7.6 L18 19"/><path d="M9 14 L15 14"/></symbol>
+    <symbol id="i-ruler" viewBox="0 0 24 24"><rect x="2.5" y="9" width="19" height="6" rx="0.5" transform="rotate(-25 12 12)"/><path d="M7.5 9.3 L8.6 11.6 M10.3 8 L11.4 10.3 M13.1 6.7 L14.2 9 M15.9 5.4 L17 7.7" transform="rotate(-25 12 12)"/></symbol>
+    <symbol id="i-calculator" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="1.5"/><line x1="7.5" y1="6.5" x2="16.5" y2="6.5"/><line x1="7.5" y1="11" x2="9.5" y2="11"/><line x1="11" y1="11" x2="13" y2="11"/><line x1="14.5" y1="11" x2="16.5" y2="11"/><line x1="7.5" y1="14.5" x2="9.5" y2="14.5"/><line x1="11" y1="14.5" x2="13" y2="14.5"/><line x1="14.5" y1="14.5" x2="16.5" y2="14.5"/><line x1="7.5" y1="18" x2="9.5" y2="18"/><line x1="11" y1="18" x2="13" y2="18"/><line x1="14.5" y1="18" x2="16.5" y2="18"/></symbol>
+    <symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 2.5 C12 2.5 5.5 11 5.5 15.5 C5.5 19.1 8.4 22 12 22 C15.6 22 18.5 19.1 18.5 15.5 C18.5 11 12 2.5 12 2.5 Z"/></symbol>
+    <symbol id="i-river" viewBox="0 0 24 24"><path d="M3 5 C8 9 4 12 9 16 C13 19 11 21.5 11 21.5"/><path d="M9 3.5 C14 7.5 10 11 15 15 C19 18 17 20.5 17 20.5"/></symbol>
+    <symbol id="i-tsquare" viewBox="0 0 24 24"><path d="M4 4 V20 H20"/><path d="M4 4 L20 4 M8 4 V8 M12 4 V8 M16 4 V8 M4 16 H8 M4 12 H8"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="M4 6.5 L12 13 L20 6.5"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6 3 C5 3 4 4 4 5 C4 14 10 20 19 20 C20 20 21 19 21 18 L21 15.3 C21 14.7 20.6 14.2 20 14 L16.2 12.9 C15.7 12.7 15.1 12.9 14.8 13.3 L13.4 15 C10.9 13.7 9 11.9 7.7 9.4 L9.4 8 C9.8 7.7 10 7.1 9.8 6.6 L8.7 2.8 C8.5 2.2 8 1.9 7.4 1.9 L6 3 Z"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><text x="12" y="15.5" font-family="Space Grotesk, sans-serif" font-size="10" text-anchor="middle" fill="currentColor" stroke="none">in</text></symbol>
+    <symbol id="i-emblem" viewBox="0 0 100 100"><circle cx="50" cy="50" r="42"/><line x1="14" y1="50" x2="86" y2="50"/><circle cx="50" cy="24" r="3" fill="currentColor" stroke="none"/><path d="M50 27 L36 46 M50 27 L64 46"/><path d="M22 58 C30 52 36 64 44 58 C48 55 52 61 56 58 C62 53 70 61 78 58"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21 C4 16.5 7.5 14 12 14 C16.5 14 20 16.5 20 21"/></symbol>
+    <symbol id="i-building" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="19" rx="0.5"/><line x1="8" y1="6.5" x2="10" y2="6.5"/><line x1="13" y1="6.5" x2="15" y2="6.5"/><line x1="8" y1="10" x2="10" y2="10"/><line x1="13" y1="10" x2="15" y2="10"/><line x1="8" y1="13.5" x2="10" y2="13.5"/><line x1="13" y1="13.5" x2="15" y2="13.5"/><rect x="10" y="17" width="4" height="5"/></symbol>
+    <symbol id="i-bridge" viewBox="0 0 24 24"><path d="M2 16 C2 16 4 9 12 9 C20 9 22 16 22 16"/><line x1="2" y1="19" x2="22" y2="19"/><line x1="5" y1="19" x2="5" y2="13.5"/><line x1="9" y1="19" x2="9" y2="10.2"/><line x1="15" y1="19" x2="15" y2="10.2"/><line x1="19" y1="19" x2="19" y2="13.5"/></symbol>
+    <symbol id="i-dam" viewBox="0 0 24 24"><path d="M2 12 L7 4 L17 4 L22 12 Z"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M2 12 L2 20 L22 20 L22 12"/><path d="M4 16 C6 15 8 17 10 16 C12 15 14 17 16 16 C18 15 20 17 22 16" /></symbol>
+    <symbol id="i-irrigation" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="7" y1="6" x2="7" y2="11"/><line x1="12" y1="6" x2="12" y2="14"/><line x1="17" y1="6" x2="17" y2="11"/><path d="M5 13 C6 14.5 8 14.5 9 13" /><path d="M10 16 C11 17.5 13 17.5 14 16" /><path d="M15 13 C16 14.5 18 14.5 19 13" /></symbol>
+    <symbol id="i-group" viewBox="0 0 24 24"><circle cx="8.5" cy="8" r="3"/><path d="M2.5 20 C2.5 16 5 13.8 8.5 13.8 C12 13.8 14.5 16 14.5 20"/><circle cx="17" cy="9.5" r="2.4"/><path d="M14.8 20 C14.8 17 16.5 15.2 19 15.2 C21.3 15.2 21.7 17 21.7 19" /></symbol>
+    <symbol id="i-certificate" viewBox="0 0 24 24"><rect x="2.5" y="3.5" width="19" height="13.5" rx="1.2"/><line x1="6" y1="7.5" x2="16" y2="7.5"/><line x1="6" y1="11" x2="13" y2="11"/><circle cx="9" cy="19" r="3"/><path d="M7 21.3 L6.2 24 L9 22.5 L11.8 24 L11 21.3"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="1.5"/><line x1="3" y1="9.5" x2="21" y2="9.5"/><line x1="7.5" y1="3" x2="7.5" y2="6.5"/><line x1="16.5" y1="3" x2="16.5" y2="6.5"/><line x1="7" y1="13" x2="9" y2="13"/><line x1="11" y1="13" x2="13" y2="13"/><line x1="15" y1="13" x2="17" y2="13"/><line x1="7" y1="17" x2="9" y2="17"/><line x1="11" y1="17" x2="13" y2="17"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 22 C12 22 19 14.8 19 9.5 C19 5.4 15.9 2 12 2 C8.1 2 5 5.4 5 9.5 C5 14.8 12 22 12 22 Z"/><circle cx="12" cy="9.3" r="2.6"/></symbol>
+    <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="2.5" y="7.5" width="19" height="13" rx="1.5"/><path d="M8 7.5 V5.5 C8 4.4 8.9 3.5 10 3.5 H14 C15.1 3.5 16 4.4 16 5.5 V7.5"/><line x1="2.5" y1="13" x2="21.5" y2="13"/><rect x="10.3" y="11.5" width="3.4" height="3" rx="0.4"/></symbol>
+    <symbol id="i-laptop" viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="12" rx="1"/><line x1="1.5" y1="19.5" x2="22.5" y2="19.5"/><line x1="9.5" y1="19.5" x2="9.5" y2="17.5"/><line x1="14.5" y1="19.5" x2="14.5" y2="17.5"/></symbol>
+    <symbol id="i-pencil" viewBox="0 0 24 24"><path d="M4 20 L4.8 16.2 L15.5 5.5 C16.3 4.7 17.6 4.7 18.4 5.5 C19.2 6.3 19.2 7.6 18.4 8.4 L7.7 19.1 Z"/><line x1="13.8" y1="7.2" x2="16.7" y2="10.1"/><line x1="4" y1="20" x2="7.7" y2="19.1"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><line x1="4" y1="21" x2="4" y2="3"/><line x1="4" y1="21" x2="21" y2="21"/><rect x="7" y="13" width="3" height="8"/><rect x="12.5" y="9" width="3" height="12"/><rect x="18" y="5" width="3" height="16"/></symbol>
+    <symbol id="i-cube" viewBox="0 0 24 24"><path d="M12 2.5 L21 7.5 V16.5 L12 21.5 L3 16.5 V7.5 Z"/><path d="M3 7.5 L12 12.5 L21 7.5"/><line x1="12" y1="12.5" x2="12" y2="21.5"/></symbol>
+    <symbol id="i-hardhat" viewBox="0 0 24 24"><path d="M3 17 C3 10.5 7 5.5 12 5.5 C17 5.5 21 10.5 21 17 Z"/><line x1="1.5" y1="17" x2="22.5" y2="17"/><line x1="12" y1="2.5" x2="12" y2="6"/><rect x="9.5" y="17" width="5" height="2.2" rx="0.4"/></symbol>
+    <symbol id="i-document" viewBox="0 0 24 24"><path d="M6 2.5 H15 L19 6.5 V21.5 H6 Z"/><path d="M15 2.5 V6.5 H19"/><line x1="8.5" y1="11" x2="16.5" y2="11"/><line x1="8.5" y1="14.5" x2="16.5" y2="14.5"/><line x1="8.5" y1="18" x2="13.5" y2="18"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><line x1="2.5" y1="12" x2="21.5" y2="12"/><path d="M12 2.5 C15 5.5 16.5 8.5 16.5 12 C16.5 15.5 15 18.5 12 21.5 C9 18.5 7.5 15.5 7.5 12 C7.5 8.5 9 5.5 12 2.5 Z"/></symbol>
+  </defs>
+</svg>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-brand"><svg class="icon" id="secretTapZone"><use href="#i-emblem"/></svg> <span data-editable contenteditable="false">TEDY KURNIAWAN</span></div>
+    <button class="nav-toggle" id="navToggle" aria-label="Buka menu"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#bab-pengalaman">Pengalaman</a></li>
+      <li><a href="#kontak">Kontak</a></li>
+      <li><button id="btnExportPdfNav" class="nav-pdf-btn" title="Unduh portofolio sebagai PDF">Unduh PDF ↓</button></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="pageContent">
+<!-- HERO : BAB 1 — PROFIL -->
+<header class="hero" id="bab-profil">
+  <div class="wrap hero-inner">
+    <div class="hero-kicker"><span class="rule"></span> <span data-editable contenteditable="false">Profil</span></div>
+    <div class="hero-grid">
+      <div class="photo-frame shape-circle" id="photoFrame" data-shape="circle">
+        <img id="profilePhoto" alt="Foto Tedy Kurniawan" style="object-position:50% 50%;">
+        <svg class="icon placeholder-icon" id="photoPlaceholder"><use href="#i-user"/></svg>
+        <div class="photo-overlay" id="photoOverlay">Klik untuk ganti foto</div>
+        <div class="photo-reposition" id="photoReposition">
+          <span>☩ Geser untuk atur posisi</span>
+          <div class="photo-zoom-row">
+            <span>🔍</span>
+            <input type="range" id="photoZoomRange" min="100" max="250" value="100" step="1" title="Perbesar / perkecil foto">
+          </div>
+          <div class="photo-shape-row" id="photoShapeRow">
+            <button type="button" class="shape-circle active" data-shape="circle" title="Bulat"></button>
+            <button type="button" class="shape-rounded" data-shape="rounded" title="Kotak sudut membulat"></button>
+            <button type="button" class="shape-fillet" data-shape="fillet" title="Kotak sudut fillet besar"></button>
+            <button type="button" class="shape-square" data-shape="square" title="Kotak sudut tegas"></button>
+          </div>
+          <button id="photoDone">✓ Selesai</button>
+        </div>
+      </div>
+      <div>
+        <h1 data-editable contenteditable="false">Tedy Kurniawan</h1>
+        <p class="hero-about" data-editable contenteditable="false">Bekerja di bidang manajemen proyek konstruksi dan estimasi biaya, dengan ketertarikan pada gambar teknik dan pergerakan air dalam sistem yang kita bangun. Terbiasa menyusun perhitungan dan gambar kerja yang rapi serta dapat dipertanggungjawabkan.</p>
+        <p class="hero-line" data-editable contenteditable="false">Quantity Surveyor / Estimator · Drafter · Hydrology Enthusiast — Teknik Sipil, Institut Teknologi Nasional Yogyakarta (ITNY)</p>
+        <div class="hero-cta">
+          <a href="#bab-pengalaman" class="btn-solid" data-editable contenteditable="false">Lihat Portofolio</a>
+          <a href="#kontak" class="link-arrow" data-editable contenteditable="false">Hubungi Saya →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- BAB 2 — PENGALAMAN KERJA (berisi sub-bab: QS, Drafter, Hydrology, dan sub-bab tambahan) -->
+<section id="bab-pengalaman" class="dark-section bab-section" data-bab data-bab-deletable>
+  <button class="drag-handle" draggable="true" data-drag-type="bab" title="Tarik untuk ubah urutan Bab">⠿</button>
+  <button class="bab-delete-btn" title="Hapus seluruh Bab ini">×</button>
+  <div class="wrap">
+    <div class="print-cover">
+      <div class="eyebrow reveal bab-eyebrow"><span class="icon-wrap" data-icon-id="i-river"><svg class="icon"><use href="#i-river"/></svg><img class="custom-icon" alt="ikon custom"></span> <span class="bab-number-label" data-editable contenteditable="false">Bab 2</span></div>
+      <h2 class="sec-title reveal" data-editable contenteditable="false">Pengalaman Kerja</h2>
+      <p class="sec-lede reveal" data-editable contenteditable="false">Pengalaman kerja saya di berbagai bidang, lengkap dengan tautan bukti dan dokumentasi.</p>
+    </div>
+
+    <div style="height:56px;"></div>
+
+    <!-- SUB-BAB 2.1: QS -->
+    <div class="role-block reveal" data-subbab>
+      <div class="role-head"><button class="drag-handle" draggable="true" data-drag-type="subbab" title="Tarik untuk ubah urutan sub-bab">⠿</button>
+        <span class="icon-wrap" data-icon-id="i-calculator"><svg class="icon"><use href="#i-calculator"/></svg><img class="custom-icon" alt="ikon custom"></span>
+        <h3 class="role-name"><span class="subbab-number-label"></span> <span data-editable contenteditable="false">Quantity Surveyor / Estimator</span></h3>
+        <span class="role-meta" data-editable contenteditable="false">Estimasi &amp; Dokumentasi Biaya</span>
+        <button class="subbab-delete" title="Hapus sub-bab">×</button>
+      </div>
+      <div class="project-grid" id="grid-qs">
+        <div class="project-card">
+          <button class="drag-handle" draggable="true" data-drag-type="card" title="Tarik untuk ubah urutan kartu">⠿</button><button class="card-delete" title="Hapus">×</button>
+          <span class="icon-wrap" data-icon-id="i-building"><svg class="icon"><use href="#i-building"/></svg><img class="custom-icon" alt="ikon custom"></span>
+          <h4 data-editable contenteditable="false">Victory Tower (Empire Tower) — Medan / Jakarta</h4>
+          <div class="card-meta">
+            <span class="meta-item"><span class="icon-wrap" data-icon-id="i-calendar"><svg class="icon"><use href="#i-calendar"/></svg><img class="custom-icon" alt="ikon custom"></span><span data-editable contenteditable="false">Jan 2023 — Mar 2023</span></span>
+            <span class="meta-item"><span class="icon-wrap" data-icon-id="i-pin"><svg class="icon"><use href="#i-pin"/></svg><img class="custom-icon" alt="ikon custom"></span><span data-editable contenteditable="false">Medan / Jakarta</span></span>
+            <span class="meta-item"><span class="icon-wrap" data-icon-id="i-briefcase"><svg class="icon"><use href="#i-briefcase"/></svg><img class="custom-icon" alt="ikon custom"></span><span data-editable contenteditable="false">Freelance</span></span>
+          </div>
+          <p data-editable contenteditable="false">Menyusun AHS untuk demolisi & penggantian pintu kaca rangka alumunium (GD1) serta jendela kaca tetap (W1) di Lobi Utama Lantai Dasar.</p>
+          <div class="card-links">
+            <a href="#" class="proof-link" data-editable contenteditable="false">Link Bukti Proyek ↗</a>
+            <button class="edit-url-btn" data-link title="Ubah tautan">✎</button>
+          </div>
+          <div class="doc-gallery" data-doc-gallery><span class="doc-empty-note">Belum ada dokumentasi</span><button class="doc-add" data-doc-add title="Tambah dokumentasi">+</button></div>
+        </div>
+        <div class="project-card">
+          <button class="drag-handle" draggable="true" data-drag-type="card" title="Tarik untuk ubah urutan kartu">⠿</button><button class="card-delete" title="Hapus">×</button>
+          <span class="icon-wrap" data-icon-id="i-irrigation"><svg class="icon"><use href="#i-irrigation"/></svg><img class="custom-icon" alt="ikon custom"></span>
+          <h4 data-editable contenteditable="false">Renovasi Masjid — Area Bantaran Sungai, Medan</h4>
+          <div class="card-meta">
+            <span class="meta-item"><span class="icon-wrap" data-icon-id="i-calendar"><svg class="icon"><use href="#i-calendar"/></svg><img class="custom-icon" alt="ikon custom"></span><span data-editable contenteditable="false">Apr 2023 — Jun 2023</span></span>
+            <span class="meta-item"><span class="icon-wrap" data-icon-id="i-pin"><svg class="icon"><use href="#i-pin"/></svg><img class="custom-icon" alt="ikon custom"></span><span data-editable contenteditable="false">Medan</span></span>
+            <span class="meta-item"><span class="icon-wrap" data-icon-id="i-briefcase"><svg class="icon"><use href="#i-briefcase"/></svg><img class="custom-icon" alt="ikon custom"></span><span data-editable contenteditable="false">Freelance</span></span>
+          </div>
+          <p data-editable contenteditable="false">AHS untuk demolisi & pemasangan ulang railing pipa besi, stiker oracal fasad kaca/alumunium, dan fabrikasi kabinet wastafel.</p>
+          <div class="card-links">
+            <a href="#" class="proof-link" data-editable contenteditable="false">Link Bukti Proyek ↗</a>
+            <button class="edit-url-btn" data-link title="Ubah tautan">✎</button>
+          </div>
+          <div class="doc-gallery" data-doc-gallery><span class="doc-empty-note">Belum ada dokumentasi</span><button class="doc-add" data-doc-add title="Tambah dokumentasi">+</button></div>
+        </div>
+      </div>
+      <button class="add-card-btn" data-add="grid-qs" data-icon="i-ruler">+ Tambah Proyek</button>
+    </div>
+
+    <!-- SUB-BAB 2.2: Drafter -->
+    <div class="role-block reveal" data-subbab>
+      <div class="role-head"><button class="drag-handle" draggable="true" data-drag-type="subbab" title="Tarik untuk ubah urutan sub-bab">⠿</button>
+        <span class="icon-wrap" data-icon-id="i-compass"><svg class="icon"><use href="#i-compass"/></svg><img class="custom-icon" alt="ikon custom"></span>
+        <span class="icon-wrap" data-icon-id="i-bridge"><svg class="icon"><use href="#i-bridge"/></svg><img class="custom-icon" alt="ikon custom"></span>
+        <h3 class="role-name"><span class="subbab-number-label"></span> <span data-editable contenteditable="false">Drafter</span></h3>
+        <span class="role-meta" data-editable contenteditable="false">Gambar Kerja</span>
+        <button class="subbab-delete" title="Hapus sub-bab">×</button>
+      </div>
+      <div class="project-grid" id="grid-drafter">
+        <div class="project-card">
+          <button class="drag-handle" draggable="true" data-drag-type="card" title="Tarik untuk ubah urutan kartu">⠿</button><button class="card-delete" title="Hapus">×</button>
+          <span class="icon-wrap" data-icon-id="i-tsquare"><svg class="icon"><use href="#i-tsquare"/></svg><img class="custom-icon" alt="ikon custom"></span>
+          <h4 data-editable contenteditable="false">Nama Proyek / Lokasi</h4>
+          <div class="card-meta">
+            <span class="meta-item"><span class="icon-wrap" data-icon-id="i-calendar"><svg class="icon"><use href="#i-calendar"/></svg><img class="custom-icon" alt="ikon custom"></span><span data-editable contenteditable="false">Bulan Tahun — Bulan Tahun</span></span>
+            <span class="meta-item"><span class="icon-wrap" data-icon-id="i-pin"><svg class="icon"><use href="#i-pin"/></svg><img class="custom-icon" alt="ikon custom"></span><span data-editable contenteditable="false">Lokasi Kerja</span></span>
+            <span class="meta-item"><span class="icon-wrap" data-icon-id="i-briefcase"><svg class="icon"><use href="#i-briefcase"/></svg><img class="custom-icon" alt="ikon custom"></span><span data-editable contenteditable="false">Jenis Pekerjaan</span></span>
+          </div>
+          <p data-editable contenteditable="false">Jenis gambar yang dikerjakan, software yang dipakai, dan lingkup pekerjaan.</p>
+          <div class="card-links">
+            <a href="#" class="proof-link" data-editable contenteditable="false">Link Bukti Proyek ↗</a>
+            <button class="edit-url-btn" data-link title="Ubah tautan">✎</button>
+          </div>
+          <div class="doc-gallery" data-doc-gallery><span class="doc-empty-note">Belum ada dokumentasi</span><button class="doc-add" data-doc-add title="Tambah dokumentasi">+</button></div>
+        </div>
+      </div>
+      <button class="add-card-btn" data-add="grid-drafter" data-icon="i-tsquare">+ Tambah Proyek</button>
+    </div>
+
+    <!-- SUB-BAB 2.3: Hydrology -->
+    <div class="role-block reveal" data-subbab>
+      <div class="role-head"><button class="drag-handle" draggable="true" data-drag-type="subbab" title="Tarik untuk ubah urutan sub-bab">⠿</button>
+        <span class="icon-wrap" data-icon-id="i-drop"><svg class="icon"><use href="#i-drop"/></svg><img class="custom-icon" alt="ikon custom"></span>
+        <span class="icon-wrap" data-icon-id="i-dam"><svg class="icon"><use href="#i-dam"/></svg><img class="custom-icon" alt="ikon custom"></span>
+        <h3 class="role-name"><span class="subbab-number-label"></span> <span data-editable contenteditable="false">Hydrology Enthusiast</span></h3>
+        <span class="role-meta" data-editable contenteditable="false">Catatan &amp; Riset Mandiri</span>
+        <button class="subbab-delete" title="Hapus sub-bab">×</button>
+      </div>
+      <div class="project-grid" id="grid-hydro">
+        <div class="project-card">
+          <button class="drag-handle" draggable="true" data-drag-type="card" title="Tarik untuk ubah urutan kartu">⠿</button><button class="card-delete" title="Hapus">×</button>
+          <span class="icon-wrap" data-icon-id="i-river"><svg class="icon"><use href="#i-river"/></svg><img class="custom-icon" alt="ikon custom"></span>
+          <h4 data-editable contenteditable="false">Studi Kasus / Lokasi</h4>
+          <div class="card-meta">
+            <span class="meta-item"><span class="icon-wrap" data-icon-id="i-calendar"><svg class="icon"><use href="#i-calendar"/></svg><img class="custom-icon" alt="ikon custom"></span><span data-editable contenteditable="false">Bulan Tahun — Bulan Tahun</span></span>
+            <span class="meta-item"><span class="icon-wrap" data-icon-id="i-pin"><svg class="icon"><use href="#i-pin"/></svg><img class="custom-icon" alt="ikon custom"></span><span data-editable contenteditable="false">Lokasi Kerja</span></span>
+            <span class="meta-item"><span class="icon-wrap" data-icon-id="i-briefcase"><svg class="icon"><use href="#i-briefcase"/></svg><img class="custom-icon" alt="ikon custom"></span><span data-editable contenteditable="false">Riset Mandiri</span></span>
+          </div>
+          <p data-editable contenteditable="false">Riset mandiri atau observasi lapangan terkait drainase dan daerah aliran sungai.</p>
+          <div class="card-links">
+            <a href="#" class="proof-link" data-editable contenteditable="false">Link Bukti Proyek ↗</a>
+            <button class="edit-url-btn" data-link title="Ubah tautan">✎</button>
+          </div>
+          <div class="doc-gallery" data-doc-gallery><span class="doc-empty-note">Belum ada dokumentasi</span><button class="doc-add" data-doc-add title="Tambah dokumentasi">+</button></div>
+        </div>
+      </div>
+      <button class="add-card-btn" data-add="grid-hydro" data-icon="i-river">+ Tambah Proyek</button>
+    </div>
+
+    <button class="add-subbab-btn" data-add-subbab="bab-pengalaman" data-icon="i-ruler">+ Tambah Sub-Bab Baru (mis. peran lain)</button>
+  </div>
+</section>
+
+<!-- BAB 3 — PENGALAMAN ORGANISASI / KEPANITIAAN -->
+<section id="bab-organisasi" class="dark-section bab-section" data-bab data-bab-deletable>
+  <button class="drag-handle" draggable="true" data-drag-type="bab" title="Tarik untuk ubah urutan Bab">⠿</button>
+  <button class="bab-delete-btn" title="Hapus seluruh Bab ini">×</button>
+  <div class="wrap">
+    <div class="print-cover">
+      <div class="eyebrow reveal bab-eyebrow"><span class="icon-wrap" data-icon-id="i-group"><svg class="icon"><use href="#i-group"/></svg><img class="custom-icon" alt="ikon custom"></span> <span class="bab-number-label" data-editable contenteditable="false">Bab 3</span></div>
+      <h2 class="sec-title reveal" data-editable contenteditable="false">Pengalaman Organisasi / Kepanitiaan</h2>
+      <p class="sec-lede reveal" data-editable contenteditable="false">Kegiatan organisasi dan kepanitiaan yang pernah saya ikuti, lengkap dengan tautan bukti dan dokumentasi.</p>
+    </div>
+    <div style="height:56px;"></div>
+
+    <div class="role-block reveal" data-subbab>
+      <div class="role-head"><button class="drag-handle" draggable="true" data-drag-type="subbab" title="Tarik untuk ubah urutan sub-bab">⠿</button>
+        <span class="icon-wrap" data-icon-id="i-group"><svg class="icon"><use href="#i-group"/></svg><img class="custom-icon" alt="ikon custom"></span>
+        <h3 class="role-name"><span class="subbab-number-label"></span> <span data-editable contenteditable="false">Organisasi &amp; Kepanitiaan</span></h3>
+        <span class="role-meta" data-editable contenteditable="false">Kegiatan &amp; Keorganisasian</span>
+      </div>
+      <div class="project-grid" id="grid-organisasi">
+        <div class="project-card">
+          <button class="drag-handle" draggable="true" data-drag-type="card" title="Tarik untuk ubah urutan kartu">⠿</button><button class="card-delete" title="Hapus">×</button>
+          <span class="icon-wrap" data-icon-id="i-group"><svg class="icon"><use href="#i-group"/></svg><img class="custom-icon" alt="ikon custom"></span>
+          <h4 data-editable contenteditable="false">Nama Organisasi / Kepanitiaan</h4>
+          <div class="card-meta">
+            <span class="meta-item"><span class="icon-wrap" data-icon-id="i-calendar"><svg class="icon"><use href="#i-calendar"/></svg><img class="custom-icon" alt="ikon custom"></span><span data-editable contenteditable="false">Bulan Tahun — Bulan Tahun</span></span>
+            <span class="meta-item"><span class="icon-wrap" data-icon-id="i-briefcase"><svg class="icon"><use href="#i-briefcase"/></svg><img class="custom-icon" alt="ikon custom"></span><span data-editable contenteditable="false">Posisi / Jabatan</span></span>
+            <span class="meta-item"><span class="icon-wrap" data-icon-id="i-pin"><svg class="icon"><use href="#i-pin"/></svg><img class="custom-icon" alt="ikon custom"></span><span data-editable contenteditable="false">Lokasi / Kota</span></span>
+          </div>
+          <p data-editable contenteditable="false">Apa saja yang dikerjakan selama terlibat di organisasi atau kepanitiaan ini.</p>
+          <div class="card-links">
+            <a href="#" class="proof-link" data-editable contenteditable="false">Link Bukti Kegiatan ↗</a>
+            <button class="edit-url-btn" data-link title="Ubah tautan">✎</button>
+          </div>
+          <div class="doc-gallery" data-doc-gallery><span class="doc-empty-note">Belum ada dokumentasi</span><button class="doc-add" data-doc-add title="Tambah dokumentasi">+</button></div>
+        </div>
+      </div>
+      <button class="add-card-btn" data-add="grid-organisasi" data-icon="i-group">+ Tambah Organisasi/Kepanitiaan</button>
+    </div>
+  </div>
+</section>
+
+<!-- BAB 4 — PELATIHAN & SERTIFIKASI -->
+<section id="bab-sertifikasi" class="dark-section bab-section" data-bab data-bab-deletable>
+  <button class="drag-handle" draggable="true" data-drag-type="bab" title="Tarik untuk ubah urutan Bab">⠿</button>
+  <button class="bab-delete-btn" title="Hapus seluruh Bab ini">×</button>
+  <div class="wrap">
+    <div class="print-cover">
+      <div class="eyebrow reveal bab-eyebrow"><span class="icon-wrap" data-icon-id="i-certificate"><svg class="icon"><use href="#i-certificate"/></svg><img class="custom-icon" alt="ikon custom"></span> <span class="bab-number-label" data-editable contenteditable="false">Bab 4</span></div>
+      <h2 class="sec-title reveal" data-editable contenteditable="false">Pelatihan &amp; Sertifikasi</h2>
+      <p class="sec-lede reveal" data-editable contenteditable="false">Kursus, pelatihan, dan sertifikat yang pernah saya ikuti, lengkap dengan tautan bukti dan dokumentasi.</p>
+    </div>
+    <div style="height:56px;"></div>
+
+    <div class="role-block reveal" data-subbab>
+      <div class="role-head"><button class="drag-handle" draggable="true" data-drag-type="subbab" title="Tarik untuk ubah urutan sub-bab">⠿</button>
+        <span class="icon-wrap" data-icon-id="i-certificate"><svg class="icon"><use href="#i-certificate"/></svg><img class="custom-icon" alt="ikon custom"></span>
+        <h3 class="role-name"><span class="subbab-number-label"></span> <span data-editable contenteditable="false">Pelatihan &amp; Sertifikasi</span></h3>
+        <span class="role-meta" data-editable contenteditable="false">Kursus, Pelatihan &amp; Sertifikat</span>
+      </div>
+      <div class="project-grid" id="grid-sertifikasi">
+        <div class="project-card">
+          <button class="drag-handle" draggable="true" data-drag-type="card" title="Tarik untuk ubah urutan kartu">⠿</button><button class="card-delete" title="Hapus">×</button>
+          <span class="icon-wrap" data-icon-id="i-certificate"><svg class="icon"><use href="#i-certificate"/></svg><img class="custom-icon" alt="ikon custom"></span>
+          <h4 data-editable contenteditable="false">Nama Pelatihan / Sertifikasi</h4>
+          <p data-editable contenteditable="false">Penyelenggara, tahun, dan uraian singkat materi atau kompetensi yang diperoleh dari pelatihan/sertifikasi ini.</p>
+          <div class="card-links">
+            <a href="#" class="proof-link" data-editable contenteditable="false">Link Sertifikat ↗</a>
+            <button class="edit-url-btn" data-link title="Ubah tautan">✎</button>
+          </div>
+          <div class="doc-gallery" data-doc-gallery><span class="doc-empty-note">Belum ada dokumentasi</span><button class="doc-add" data-doc-add title="Tambah dokumentasi">+</button></div>
+        </div>
+      </div>
+      <button class="add-card-btn" data-add="grid-sertifikasi" data-icon="i-certificate">+ Tambah Pelatihan/Sertifikasi</button>
+    </div>
+  </div>
+</section>
+
+<!-- BAB 5 — KEAHLIAN / SOFTWARE -->
+<section id="bab-keahlian" class="dark-section bab-section" data-bab data-bab-deletable>
+  <button class="drag-handle" draggable="true" data-drag-type="bab" title="Tarik untuk ubah urutan Bab">⠿</button>
+  <button class="bab-delete-btn" title="Hapus seluruh Bab ini">×</button>
+  <div class="wrap">
+    <div class="print-cover">
+      <div class="eyebrow reveal bab-eyebrow"><span class="icon-wrap" data-icon-id="i-ruler"><svg class="icon"><use href="#i-ruler"/></svg><img class="custom-icon" alt="ikon custom"></span> <span class="bab-number-label" data-editable contenteditable="false">Bab 5</span></div>
+      <h2 class="sec-title reveal" data-editable contenteditable="false">Software &amp; Tools</h2>
+      <p class="sec-lede reveal" data-editable contenteditable="false">Perangkat lunak yang saya kuasai untuk mendukung pekerjaan estimasi biaya, gambar teknik, dan analisis hidrologi.</p>
+    </div>
+
+    <div style="height:48px;"></div>
+
+    <div class="skill-grid" id="skillGrid">
+      <div class="skill-card">
+        <button class="drag-handle" draggable="true" data-drag-type="card" title="Tarik untuk ubah urutan kartu">⠿</button><button class="card-delete" title="Hapus">×</button>
+        <div class="skill-logo" data-skill-logo data-icon-id="i-calculator" title="Klik untuk ganti ikon/logo">
+          <svg class="icon placeholder-icon"><use href="#i-calculator"/></svg>
+          <img alt="Logo software" class="">
+        </div>
+        <h4 data-editable contenteditable="false">Microsoft Excel</h4>
+        <p class="skill-desc" data-editable contenteditable="false">Estimasi biaya (AHS/BOQ), rekap kuantitas, dan laporan progres proyek.</p>
+        <div class="skill-level" data-level="4" data-editable-level>
+          <span class="lv-dot"></span><span class="lv-dot"></span><span class="lv-dot"></span><span class="lv-dot"></span><span class="lv-dot"></span>
+        </div>
+        <span class="skill-level-label">Mahir</span>
+      </div>
+    </div>
+    <button class="add-card-btn" id="btnAddSkill">+ Tambah Software</button>
+  </div>
+</section>
+
+<!-- ZONA TAMBAH BAB BARU -->
+<section class="dark-section add-bab-zone">
+  <div class="wrap" style="text-align:center;">
+    <button class="add-bab-btn" id="btnAddBab">+ Tambah Bab Baru</button>
+  </div>
+</section>
+
+<!-- KONTAK -->
+<section id="kontak" class="bab-section" data-bab>
+  <div class="wrap contact-band">
+    <div class="eyebrow reveal bab-eyebrow"><span class="icon-wrap" data-icon-id="i-drop"><svg class="icon"><use href="#i-drop"/></svg><img class="custom-icon" alt="ikon custom"></span> <span class="bab-number-label" data-editable contenteditable="false">Bab 6</span></div>
+    <h2 class="sec-title reveal" data-editable contenteditable="false">Mari Berdiskusi</h2>
+    <p class="sec-lede reveal" data-editable contenteditable="false" style="margin:0 auto;">Terbuka untuk proyek estimasi biaya, drafting, maupun kolaborasi seputar hidrologi.</p>
+    <div class="contact-links reveal">
+      <a class="contact-link" href="https://wa.me/6285236704830" target="_blank" rel="noopener">
+        <span class="icon-wrap" data-icon-id="i-phone"><svg class="icon"><use href="#i-phone"/></svg><img class="custom-icon" alt="ikon custom"></span>
+        <span class="cl-label" data-editable contenteditable="false">WHATSAPP</span><span class="cl-val" data-editable contenteditable="false">0852-3670-4830</span>
+        <button class="edit-url-btn" data-link title="Ubah tautan">✎</button>
+      </a>
+      <a class="contact-link" href="mailto:tedydyk31@gmail.com">
+        <span class="icon-wrap" data-icon-id="i-mail"><svg class="icon"><use href="#i-mail"/></svg><img class="custom-icon" alt="ikon custom"></span>
+        <span class="cl-label" data-editable contenteditable="false">EMAIL</span><span class="cl-val" data-editable contenteditable="false">tedydyk31@gmail.com</span>
+        <button class="edit-url-btn" data-link title="Ubah tautan">✎</button>
+      </a>
+      <a class="contact-link" href="https://www.linkedin.com/in/tedykurniawan31" target="_blank" rel="noopener">
+        <span class="icon-wrap" data-icon-id="i-link"><svg class="icon"><use href="#i-link"/></svg><img class="custom-icon" alt="ikon custom"></span>
+        <span class="cl-label" data-editable contenteditable="false">LINKEDIN</span><span class="cl-val" data-editable contenteditable="false">in/tedykurniawan31</span>
+        <button class="edit-url-btn" data-link title="Ubah tautan">✎</button>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-inner">
+    <span style="display:flex;align-items:center;gap:10px;"><span class="icon-wrap" data-icon-id="i-emblem"><svg class="icon"><use href="#i-emblem"/></svg><img class="custom-icon" alt="ikon custom"></span> © <span id="footYear"></span> <span data-editable contenteditable="false">Tedy Kurniawan</span></span>
+    <span data-editable contenteditable="false">Medan, Indonesia</span>
+  </div>
+</footer>
+</main>
+
+<!-- UNDO/REDO — selalu terlihat selama mode edit aktif, di pojok kiri bawah -->
+<div id="undoRedoBar">
+  <button id="btnUndo" title="Urungkan (Undo)" disabled>↶ Undo</button>
+  <button id="btnRedo" title="Ulangi (Redo)" disabled>↷ Redo</button>
+</div>
+
+<!-- EDIT TOOLBAR — tidak ada tombol terlihat. Ketik kata rahasia di mana saja (di luar kotak teks) untuk memunculkan login. -->
+<div id="editToolbar">
+  <div class="toolbar-header">
+    <h5>Mode Edit</h5>
+    <button id="toolbarMinimize" title="Kecilkan/besarkan panel">−</button>
+  </div>
+  <div id="toolbarBody">
+  <div class="status" id="editStatus"></div>
+  <h5>Font</h5>
+  <select id="fontSelect">
+    <option value="architect">Space Grotesk + Inter</option>
+    <option value="bold">Archivo + Inter</option>
+    <option value="technical">IBM Plex Sans</option>
+    <option value="elegant">Fraunces + Inter</option>
+    <option value="blueprint">JetBrains Mono + Inter</option>
+  </select>
+  <h5>Tema Warna Latar</h5>
+  <select id="themeSelect">
+    <option value="ocean">Ocean — Biru Air</option>
+    <option value="navy">Navy Profesional</option>
+    <option value="slate">Slate Elegant</option>
+    <option value="forest">Forest Hijau</option>
+    <option value="espresso">Espresso Cokelat</option>
+  </select>
+  <div class="color-row"><label>Warna Aksen</label><input type="color" id="accentPicker" value="#2E8B9E"></div>
+  <div class="color-row"><label>Warna Tombol</label><input type="color" id="warmPicker" value="#C99A55"></div>
+  <h5>Pola Latar</h5>
+  <select id="patternSelect">
+    <option value="mix">Campuran (kalkulator, gedung, bendungan, penggaris)</option>
+    <option value="blueprint">Grid Blueprint</option>
+    <option value="grafik">Kertas Grafik (Graph Paper)</option>
+    <option value="dimensi">Garis Dimensi Teknik</option>
+    <option value="riak">Riak Air</option>
+    <option value="teknik">Gedung, Jembatan, Bendungan &amp; Irigasi</option>
+    <option value="none">Tanpa Pola</option>
+    <option value="custom">Gambar Sendiri (upload)…</option>
+  </select>
+
+  <div id="customBgPanel" style="display:none;">
+    <button id="btnUploadBg" style="width:100%;text-align:center;">🖼️ Upload Gambar Latar</button>
+    <img id="customBgPreview" alt="Pratinjau gambar latar" style="display:none;width:100%;height:70px;object-fit:cover;border-radius:6px;margin-top:8px;border:1px solid var(--line-dark);">
+    <div class="status" id="customBgFileName" style="margin-top:6px;"></div>
+    <label style="display:block;font-size:0.74rem;color:var(--ink-dim);margin-top:10px;">Opacity Gambar</label>
+    <input type="range" id="bgOpacitySlider" min="0" max="100" value="55" style="width:100%;">
+    <div class="color-row"><label>Warna Penutup (Overlay)</label><input type="color" id="bgOverlayColor" value="#0a2a40"></div>
+    <label style="display:block;font-size:0.74rem;color:var(--ink-dim);margin-top:10px;">Opacity Warna Penutup</label>
+    <input type="range" id="bgOverlayOpacitySlider" min="0" max="100" value="45" style="width:100%;">
+    <button id="btnRemoveCustomBg" style="width:100%;text-align:center;margin-top:10px;">Hapus Gambar Latar</button>
+  </div>
+
+  <h5>Petunjuk Singkat</h5>
+  <div class="status">• Klik teks untuk edit langsung.<br>• Blok teks → toolbar Bold/Italic/Underline/List/Align/Font.<br>• Ikon ✎ untuk ubah link.<br>• Tombol + di galeri → tambah dokumentasi (klik foto untuk lihat besar).<br>• Tombol bulat kanan-bawah → kecilkan/besarkan panel ini.</div>
+  <h5>Publish Otomatis</h5>
+  <button id="btnGhSetup" style="margin-bottom:4px;font-size:0.75rem;background:rgba(255,255,255,0.04);">⚙️ Setup GitHub (sekali aja)</button>
+  <button class="save-btn" id="btnSave">🚀 Publish</button>
+  <button id="btnSaveLocal" style="margin-top:4px;">💾 Unduh File (backup)</button>
+  <button id="btnExportPdf">📄 Unduh PDF (A4 Landscape)</button>
+  <button id="btnLock">Keluar Mode Edit</button>
+  </div>
+</div>
+
+<div id="pwModal">
+  <div class="pw-box">
+    <h3>Masuk Mode Edit</h3>
+    <p class="pw-sub">Ketik kata sandi untuk mengaktifkan mode edit.</p>
+    <input type="password" id="pwInput" placeholder="Kata sandi…" style="width:100%;box-sizing:border-box;padding:9px 12px;border-radius:7px;border:1.5px solid #ccc;font-size:1rem;margin-bottom:10px;outline:none;" autocomplete="off">
+    <div class="pw-error" id="pwError" style="display:none;">Kata sandi salah, coba lagi.</div>
+    <div class="pw-actions">
+      <button class="pw-cancel" id="pwCancel">Batal</button>
+      <button class="pw-confirm" id="pwConfirm">Masuk</button>
+    </div>
+  </div>
+</div>
+
+<div id="iconPickerModal">
+  <div class="icon-picker-box">
+    <h3>Pilih Ikon</h3>
+    <p class="icon-picker-sub">Pilih salah satu ikon di bawah, atau upload PNG sendiri.</p>
+    <div class="icon-picker-grid" id="iconPickerGrid"></div>
+    <div class="icon-picker-actions">
+      <button class="icon-picker-cancel" id="iconPickerCancel">Batal</button>
+      <button class="icon-picker-reset" id="iconPickerReset" style="display:none;">Hapus PNG Custom</button>
+      <button class="icon-picker-upload" id="iconPickerUpload">Upload PNG Sendiri</button>
+    </div>
+  </div>
+</div>
+
+<div id="textToolbar">
+  <button data-cmd="bold" title="Tebal"><b>B</b></button>
+  <button data-cmd="italic" title="Miring"><i>I</i></button>
+  <button data-cmd="underline" title="Garis bawah"><u>U</u></button>
+  <span class="tb-sep"></span>
+  <button data-cmd="insertUnorderedList" title="Daftar poin">•≡</button>
+  <button data-cmd="insertOrderedList" title="Daftar bernomor">1.≡</button>
+  <span class="tb-sep"></span>
+  <button data-align="left" title="Rata kiri">⟸</button>
+  <button data-align="center" title="Rata tengah">⟺</button>
+  <button data-align="right" title="Rata kanan">⟹</button>
+  <button data-align="justify" title="Rata kanan-kiri">☰</button>
+  <span class="tb-sep"></span>
+  <select id="toolbarFont" title="Ganti font teks terpilih">
+    <option value="">Font…</option>
+    <option value="Space Grotesk">Space Grotesk</option>
+    <option value="Archivo">Archivo</option>
+    <option value="IBM Plex Sans">IBM Plex Sans</option>
+    <option value="Fraunces">Fraunces</option>
+    <option value="JetBrains Mono">JetBrains Mono</option>
+    <option value="Inter">Inter</option>
+  </select>
+  <span class="tb-sep"></span>
+  <label class="tb-color-label" title="Warna font">
+    <input type="color" id="toolbarColor" value="#ffffff">
+  </label>
+</div>
+
+<input type="file" id="fileInput" accept="image/*" style="display:none">
+
+<div id="lightbox">
+  <button class="lb-close" title="Tutup">×</button>
+  <img id="lightboxImg" src="" alt="Dokumentasi proyek (tampilan penuh)">
+</div>
+
+<!-- Modal Setup GitHub -->
+<div id="ghSetupModal" style="position:fixed;inset:0;background:rgba(10,20,28,0.7);z-index:3100;display:none;align-items:center;justify-content:center;padding:20px;">
+  <div style="background:#fff;color:#102530;padding:28px;border-radius:10px;max-width:400px;width:100%;font-family:var(--sans);">
+    <h3 style="font-family:var(--display);font-size:1.05rem;margin-bottom:6px;">⚙️ Setup Publish Otomatis</h3>
+    <p style="font-size:0.78rem;color:#4D6470;margin-bottom:18px;">Isi sekali, tersimpan di browser ini. Kalau token habis masa berlaku, isi ulang di sini.</p>
+
+    <label style="font-size:0.76rem;color:#4D6470;display:block;margin-bottom:4px;">GitHub Personal Access Token</label>
+    <input id="ghTokenInput" type="password" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx"
+      style="width:100%;box-sizing:border-box;padding:9px 12px;border-radius:6px;border:1.5px solid #ddd;font-size:0.87rem;margin-bottom:5px;outline:none;">
+    <p style="font-size:0.72rem;color:#9FC2CB;margin-bottom:14px;">
+      Buat di: github.com → Settings → Developer settings → Personal access tokens → Classic → centang <b>repo</b>
+    </p>
+
+    <label style="font-size:0.76rem;color:#4D6470;display:block;margin-bottom:4px;">Username GitHub</label>
+    <input id="ghOwnerInput" type="text" placeholder="tedydyk31"
+      style="width:100%;box-sizing:border-box;padding:9px 12px;border-radius:6px;border:1.5px solid #ddd;font-size:0.87rem;margin-bottom:12px;outline:none;">
+
+    <label style="font-size:0.76rem;color:#4D6470;display:block;margin-bottom:4px;">Nama Repository</label>
+    <input id="ghRepoInput" type="text" placeholder="portofolio"
+      style="width:100%;box-sizing:border-box;padding:9px 12px;border-radius:6px;border:1.5px solid #ddd;font-size:0.87rem;margin-bottom:12px;outline:none;">
+
+    <label style="font-size:0.76rem;color:#4D6470;display:block;margin-bottom:4px;">Nama File di Repo</label>
+    <input id="ghPathInput" type="text" placeholder="index.html"
+      style="width:100%;box-sizing:border-box;padding:9px 12px;border-radius:6px;border:1.5px solid #ddd;font-size:0.87rem;margin-bottom:14px;outline:none;">
+
+    <div id="ghSetupStatus" style="font-size:0.78rem;min-height:18px;margin-bottom:12px;font-weight:500;"></div>
+
+    <div style="display:flex;gap:8px;">
+      <button id="ghSetupCancel" style="flex:1;padding:10px;border-radius:6px;border:none;font-size:0.83rem;cursor:pointer;background:rgba(16,37,48,0.08);color:#102530;">Batal</button>
+      <button id="ghSetupTest"   style="flex:1;padding:10px;border-radius:6px;border:none;font-size:0.83rem;cursor:pointer;background:#2E8B9E;color:#fff;">🔌 Test</button>
+      <button id="ghSetupSave"   style="flex:1;padding:10px;border-radius:6px;border:none;font-size:0.83rem;cursor:pointer;background:#C99A55;color:#102530;font-weight:700;">Simpan</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  /* ====================================================================
+     SISTEM LOGIN: Netlify Identity (email + password akun Netlify kamu
+     sendiri). Email/password TIDAK disimpan di kode ini sama sekali —
+     semua autentikasi diproses oleh server Netlify lewat widget resmi
+     mereka (script <script src=".../netlify-identity-widget.js">  di
+     bagian <head>). Wajib aktifkan "Identity" di dashboard Netlify dan
+     undang dirimu sendiri sebagai user sebelum login ini bisa dipakai —
+     lihat NETLIFY-IDENTITY-SETUP.md yang disertakan untuk langkah-langkahnya.
+  ==================================================================== */
+
+  const THEMES = {
+    ocean:    {deep:'#0A2A40', mid:'#123F58', accent:'#2E8B9E', accent2:'#7FD0DB', warm:'#C99A55'},
+    navy:     {deep:'#0E1B2E', mid:'#1B2F47', accent:'#3A6EA5', accent2:'#8FB8E0', warm:'#D9A441'},
+    slate:    {deep:'#21262C', mid:'#2E343B', accent:'#6B7785', accent2:'#A9B4BD', warm:'#C77B4E'},
+    forest:   {deep:'#13261F', mid:'#1C3A2E', accent:'#4C8C6B', accent2:'#8FC9A8', warm:'#D7A24A'},
+    espresso: {deep:'#241C18', mid:'#3A2C24', accent:'#9C7A52', accent2:'#D8B98C', warm:'#C2693C'}
+  };
+  const root = document.documentElement;
+  const FONTS = {
+    architect: {d:"'Space Grotesk', sans-serif", s:"'Inter', sans-serif"},
+    bold:      {d:"'Archivo', sans-serif", s:"'Inter', sans-serif"},
+    technical: {d:"'IBM Plex Sans', sans-serif", s:"'IBM Plex Sans', sans-serif"},
+    elegant:   {d:"'Fraunces', serif", s:"'Inter', sans-serif"},
+    blueprint: {d:"'JetBrains Mono', monospace", s:"'Inter', sans-serif"}
+  };
+  const PATTERNS = {
+    mix: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cg fill='none' stroke='rgba(255,255,255,0.07)' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='18' y='24' width='30' height='40' rx='3'/%3E%3Cline x1='23' y1='32' x2='43' y2='32'/%3E%3Cline x1='23' y1='40' x2='28' y2='40'/%3E%3Cline x1='32' y1='40' x2='37' y2='40'/%3E%3Cline x1='23' y1='47' x2='28' y2='47'/%3E%3Cline x1='32' y1='47' x2='37' y2='47'/%3E%3Cline x1='23' y1='54' x2='28' y2='54'/%3E%3Cline x1='32' y1='54' x2='37' y2='54'/%3E%3Crect x='150' y='40' width='72' height='16' rx='1' transform='rotate(-22 186 48)'/%3E%3Cline x1='158' y1='40' x2='160' y2='46' transform='rotate(-22 186 48)'/%3E%3Cline x1='168' y1='38' x2='170' y2='44' transform='rotate(-22 186 48)'/%3E%3Cline x1='178' y1='36' x2='180' y2='42' transform='rotate(-22 186 48)'/%3E%3Cline x1='188' y1='34' x2='190' y2='40' transform='rotate(-22 186 48)'/%3E%3Cline x1='198' y1='32' x2='200' y2='38' transform='rotate(-22 186 48)'/%3E%3Crect x='40' y='190' width='16' height='44'/%3E%3Crect x='60' y='170' width='20' height='64'/%3E%3Crect x='84' y='200' width='14' height='34'/%3E%3Cpath d='M150 234 L168 188 L206 188 L224 234 Z'/%3E%3Cline x1='160' y1='222' x2='216' y2='222'/%3E%3Cline x1='163' y1='210' x2='213' y2='210'/%3E%3C/g%3E%3C/svg%3E\")",
+    blueprint: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cpath d='M40 0 L0 0 0 40' fill='none' stroke='rgba(255,255,255,0.07)' stroke-width='1'/%3E%3C/svg%3E\")",
+    grafik:    "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Cpath d='M20 0 L0 0 0 20' fill='none' stroke='rgba(255,255,255,0.05)' stroke-width='0.6'/%3E%3C/svg%3E\")",
+    dimensi:   "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='70'%3E%3Cg stroke='rgba(255,255,255,0.07)' stroke-width='1' fill='none'%3E%3Cline x1='10' y1='35' x2='130' y2='35'/%3E%3Cline x1='10' y1='28' x2='10' y2='42'/%3E%3Cline x1='50' y1='28' x2='50' y2='42'/%3E%3Cline x1='90' y1='28' x2='90' y2='42'/%3E%3Cline x1='130' y1='28' x2='130' y2='42'/%3E%3C/g%3E%3C/svg%3E\")",
+    riak:      "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cg fill='none' stroke='rgba(255,255,255,0.06)' stroke-width='1'%3E%3Ccircle cx='60' cy='60' r='14'/%3E%3Ccircle cx='60' cy='60' r='28'/%3E%3Ccircle cx='60' cy='60' r='42'/%3E%3C/g%3E%3C/svg%3E\")",
+    teknik:    "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='320'%3E%3Cg fill='none' stroke='rgba(255,255,255,0.07)' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='20' y='30' width='34' height='52' rx='1'/%3E%3Cline x1='26' y1='40' x2='32' y2='40'/%3E%3Cline x1='38' y1='40' x2='44' y2='40'/%3E%3Cline x1='26' y1='48' x2='32' y2='48'/%3E%3Cline x1='38' y1='48' x2='44' y2='48'/%3E%3Crect x='30' y='66' width='14' height='16'/%3E%3Cpath d='M150 80 L160 58 L186 58 L196 80 Z'/%3E%3Cline x1='150' y1='80' x2='196' y2='80'/%3E%3Cpath d='M150 80 L150 96 L196 96 L196 80'/%3E%3Cpath d='M154 88 C157 86 161 90 164 88 C167 86 171 90 174 88' /%3E%3Cpath d='M40 150 C40 150 50 130 88 130 C126 130 136 150 136 150'/%3E%3Cline x1='40' y1='158' x2='136' y2='158'/%3E%3Cline x1='52' y1='158' x2='52' y2='140'/%3E%3Cline x1='66' y1='158' x2='66' y2='133'/%3E%3Cline x1='110' y1='158' x2='110' y2='133'/%3E%3Cline x1='124' y1='158' x2='124' y2='140'/%3E%3Cline x1='220' y1='40' x2='284' y2='40'/%3E%3Cline x1='230' y1='40' x2='230' y2='52'/%3E%3Cline x1='242' y1='40' x2='242' y2='60'/%3E%3Cline x1='262' y1='40' x2='262' y2='60'/%3E%3Cline x1='274' y1='40' x2='274' y2='52'/%3E%3Cpath d='M226 56 C230 64 234 64 238 56' /%3E%3Cpath d='M246 64 C250 72 254 72 258 64' /%3E%3Cpath d='M266 56 C270 64 274 64 278 56' /%3E%3Crect x='210' y='190' width='26' height='42' rx='1'/%3E%3Cline x1='216' y1='200' x2='220' y2='200'/%3E%3Cline x1='226' y1='200' x2='230' y2='200'/%3E%3Cline x1='216' y1='210' x2='220' y2='210'/%3E%3Cline x1='226' y1='210' x2='230' y2='210'/%3E%3Cline x1='216' y1='220' x2='220' y2='220'/%3E%3Cline x1='226' y1='220' x2='230' y2='220'/%3E%3Ccircle cx='80' cy='230' r='2' fill='rgba(255,255,255,0.07)' stroke='none'/%3E%3Cpath d='M80 233 L66 256 M80 233 L94 256'/%3E%3Cpath d='M73 248 L87 248'/%3E%3C/g%3E%3C/svg%3E\")",
+    none: "none"
+  };
+  function applyPattern(key){
+    root.style.setProperty('--tex', PATTERNS[key] || PATTERNS.mix);
+  }
+  document.getElementById('patternSelect')?.addEventListener('change', e => {
+    if (e.target.value === 'custom'){
+      customBgPanel.style.display = 'block';
+      if (root.style.getPropertyValue('--custom-bg-img') && root.style.getPropertyValue('--custom-bg-img') !== 'none'){
+        activateCustomBg();
+      } else {
+        btnUploadBg.click(); // langsung minta upload kalau belum ada gambar tersimpan
+      }
+    } else {
+      customBgPanel.style.display = 'none';
+      deactivateCustomBg();
+      applyPattern(e.target.value);
+    }
+  });
+
+  // ---------- Background custom: upload gambar sendiri + atur opacity + warna overlay ----------
+  const customBgPanel = document.getElementById('customBgPanel');
+  const btnUploadBg = document.getElementById('btnUploadBg');
+  const customBgFileName = document.getElementById('customBgFileName');
+  const bgOpacitySlider = document.getElementById('bgOpacitySlider');
+  const bgOverlayColor = document.getElementById('bgOverlayColor');
+  const bgOverlayOpacitySlider = document.getElementById('bgOverlayOpacitySlider');
+  const btnRemoveCustomBg = document.getElementById('btnRemoveCustomBg');
+
+  function activateCustomBg(){
+    document.body.classList.add('custom-bg-active');
+    root.style.setProperty('--custom-bg-overlay-display', 'block');
+  }
+  function deactivateCustomBg(){
+    document.body.classList.remove('custom-bg-active');
+    root.style.setProperty('--custom-bg-overlay-display', 'none');
+  }
+  function hexToRgba(hex, alpha){
+    const h = hex.replace('#','');
+    const r = parseInt(h.substring(0,2),16), g = parseInt(h.substring(2,4),16), b = parseInt(h.substring(4,6),16);
+    return 'rgba(' + r + ',' + g + ',' + b + ',' + alpha + ')';
+  }
+  function updateOverlayColor(){
+    const alpha = (parseInt(bgOverlayOpacitySlider.value, 10) / 100).toFixed(2);
+    root.style.setProperty('--custom-bg-overlay', hexToRgba(bgOverlayColor.value, alpha));
+  }
+
+  btnUploadBg.addEventListener('click', () => {
+    pendingUploadTarget = { type:'custom-bg' };
+    fileInput.click();
+  });
+  btnRemoveCustomBg.addEventListener('click', () => {
+    root.style.setProperty('--custom-bg-img', 'none');
+    customBgFileName.textContent = '';
+    document.getElementById('customBgPreview').style.display = 'none';
+    deactivateCustomBg();
+    document.getElementById('patternSelect').value = 'mix';
+    applyPattern('mix');
+    customBgPanel.style.display = 'none';
+  });
+  bgOpacitySlider.addEventListener('input', () => {
+    root.style.setProperty('--custom-bg-opacity', (parseInt(bgOpacitySlider.value, 10) / 100).toString());
+  });
+  bgOverlayColor.addEventListener('input', updateOverlayColor);
+  bgOverlayOpacitySlider.addEventListener('input', updateOverlayColor);
+  updateOverlayColor();
+
+  function applyTheme(key){
+    const t = THEMES[key]; if(!t) return;
+    root.style.setProperty('--bg-deep', t.deep);
+    root.style.setProperty('--bg-mid', t.mid);
+    root.style.setProperty('--accent', t.accent);
+    root.style.setProperty('--accent-2', t.accent2);
+    root.style.setProperty('--warm', t.warm);
+    document.getElementById('accentPicker').value = t.accent;
+    document.getElementById('warmPicker').value = t.warm;
+  }
+  function applyFont(key){
+    const f = FONTS[key]; if(!f) return;
+    root.style.setProperty('--display', f.d);
+    root.style.setProperty('--sans', f.s);
+  }
+
+  document.getElementById('themeSelect')?.addEventListener('change', e => applyTheme(e.target.value));
+  document.getElementById('fontSelect')?.addEventListener('change', e => applyFont(e.target.value));
+  document.getElementById('accentPicker')?.addEventListener('input', e => root.style.setProperty('--accent-2', e.target.value));
+  document.getElementById('warmPicker')?.addEventListener('input', e => root.style.setProperty('--warm', e.target.value));
+
+  /* ================================================================
+     LOGIN: Netlify Identity. Siapa yang boleh login diatur di dashboard
+     Netlify (Site settings → Identity → Invite users) — BUKAN di kode
+     ini. Tidak ada email atau password yang ditulis/disimpan di file
+     ini sama sekali, jadi tidak bisa "dibaca" dari source code.
+  ================================================================= */
+
+  // ---------- Secret trigger (HP/desktop): tap/klik logo emblem 5x berturut-turut ----------
+  // Tujuannya supaya pengunjung biasa tidak melihat tombol login sama sekali.
+  let tapCount = 0;
+  let tapTimer = null;
+  const tapZone = document.getElementById('secretTapZone');
+  if (tapZone){
+    tapZone.addEventListener('click', () => {
+      tapCount++;
+      clearTimeout(tapTimer);
+      tapTimer = setTimeout(() => { tapCount = 0; }, 1500);
+      if (tapCount >= 5){
+        tapCount = 0;
+        openPwModal();
+      }
+    });
+  }
+  // ---------- Secret trigger (desktop): ketik kata ini di mana saja (di luar kotak teks) ----------
+  const SECRET_TRIGGER = "tkedit";
+  let keyBuffer = '';
+  document.addEventListener('keydown', (e) => {
+    const tag = (e.target.tagName || '').toLowerCase();
+    const isEditableTarget = e.target.isContentEditable || tag === 'input' || tag === 'select' || tag === 'textarea';
+    if (isEditableTarget) return;
+    keyBuffer = (keyBuffer + e.key).slice(-SECRET_TRIGGER.length).toLowerCase();
+    if (keyBuffer === SECRET_TRIGGER){
+      openPwModal();
+      keyBuffer = '';
+    }
+  });
+
+  const pwModal  = document.getElementById('pwModal');
+  const pwError  = document.getElementById('pwError');
+  const pwInput  = document.getElementById('pwInput');
+  const editStatus = document.getElementById('editStatus');
+
+  // ---------- Password (SHA-256 hardcoded) ----------
+  const PW_HASH = '0626cd3a3fb92a64fcec51f9a4da3c336f62ff8e14d9c78aed0c1b4c14dbb895';
+
+  async function hashPW(pw){
+    const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(pw));
+    return Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,'0')).join('');
+  }
+
+  function openPwModal(){
+    pwError.style.display = 'none';
+    pwInput.value = '';
+    pwModal.classList.add('open');
+    setTimeout(() => pwInput.focus(), 80);
+  }
+  document.getElementById('pwCancel')?.addEventListener('click', () => pwModal.classList.remove('open'));
+  document.getElementById('pwConfirm')?.addEventListener('click', checkPassword);
+  pwInput.addEventListener('keydown', e => { if (e.key === 'Enter') checkPassword(); });
+
+  async function checkPassword(){
+    const entered = pwInput.value;
+    if (!entered){ pwError.textContent='Isi kata sandi dulu.'; pwError.style.display='block'; return; }
+    const h = await hashPW(entered);
+    if (h === PW_HASH){
+      pwModal.classList.remove('open');
+      enableEditMode();
+    } else {
+      pwError.textContent = 'Kata sandi salah, coba lagi.';
+      pwError.style.display = 'block';
+      pwInput.select();
+    }
+  }
+
+  function enableEditMode(){
+    document.body.classList.add('edit-mode');
+    document.querySelectorAll('[data-editable]').forEach(el => el.setAttribute('contenteditable','true'));
+    setToolbarCollapsed(true);
+    initHistory();
+  }
+  function disableEditMode(){
+    document.body.classList.remove('edit-mode');
+    document.querySelectorAll('[data-editable]').forEach(el => el.setAttribute('contenteditable','false'));
+  }
+  document.getElementById('btnLock')?.addEventListener('click', () => disableEditMode());
+
+  // ============================================================
+  // UNDO / REDO — menyimpan snapshot HTML dari #pageContent setiap
+  // ada perubahan (ketik teks, tambah/hapus kartu/bab, upload foto,
+  // dll). Tombol Undo/Redo mengganti isi #pageContent dengan snapshot
+  // sebelumnya/berikutnya, lalu semua listener di-attach ulang.
+  // ============================================================
+  const pageContent = document.getElementById('pageContent');
+  const btnUndo = document.getElementById('btnUndo');
+  const btnRedo = document.getElementById('btnRedo');
+  let history = [];
+  let historyIndex = -1;
+  let historyReady = false;
+  let snapshotTimer = null;
+  const MAX_HISTORY = 50;
+
+  function updateUndoRedoButtons(){
+    btnUndo.disabled = historyIndex <= 0;
+    btnRedo.disabled = historyIndex >= history.length - 1;
+  }
+
+  function pushSnapshot(){
+    if (!historyReady || isRestoring) return;
+    const html = pageContent.innerHTML;
+    // jangan simpan kalau tidak ada perubahan dari snapshot terakhir
+    if (history.length && history[historyIndex] === html) return;
+    // kalau user sempat undo lalu melakukan perubahan baru, potong history setelah index saat ini
+    history = history.slice(0, historyIndex + 1);
+    history.push(html);
+    if (history.length > MAX_HISTORY) history.shift();
+    historyIndex = history.length - 1;
+    updateUndoRedoButtons();
+  }
+  function scheduleSnapshot(){
+    if (isRestoring) return;
+    clearTimeout(snapshotTimer);
+    snapshotTimer = setTimeout(pushSnapshot, 600); // debounce supaya tidak menyimpan tiap ketikan huruf
+  }
+
+  let isRestoring = false;
+  function restoreSnapshot(html){
+    isRestoring = true;
+    clearTimeout(snapshotTimer);
+    pageContent.innerHTML = html;
+    rebindAllAfterRestore();
+    // tunda sedikit sebelum mengizinkan snapshot baru lagi, supaya perubahan DOM akibat
+    // rebind (misal renumberBabAndSubbab mengubah teks label) tidak ikut tersimpan sebagai snapshot
+    setTimeout(() => { isRestoring = false; }, 50);
+  }
+  btnUndo.addEventListener('click', () => {
+    if (historyIndex <= 0) return;
+    historyIndex--;
+    restoreSnapshot(history[historyIndex]);
+    updateUndoRedoButtons();
+  });
+  btnRedo.addEventListener('click', () => {
+    if (historyIndex >= history.length - 1) return;
+    historyIndex++;
+    restoreSnapshot(history[historyIndex]);
+    updateUndoRedoButtons();
+  });
+  // Keyboard shortcut: Ctrl+Z / Ctrl+Shift+Z (atau Ctrl+Y) — hanya saat tidak sedang mengetik di kotak teks
+  document.addEventListener('keydown', (e) => {
+    if (!document.body.classList.contains('edit-mode')) return;
+    if (!(e.ctrlKey || e.metaKey)) return;
+    if (e.key.toLowerCase() === 'z' && !e.shiftKey){ e.preventDefault(); btnUndo.click(); }
+    else if ((e.key.toLowerCase() === 'z' && e.shiftKey) || e.key.toLowerCase() === 'y'){ e.preventDefault(); btnRedo.click(); }
+  });
+
+  function initHistory(){
+    if (historyReady) return;
+    historyReady = true;
+    history = [pageContent.innerHTML];
+    historyIndex = 0;
+    updateUndoRedoButtons();
+    // Pantau semua perubahan konten (ketik teks, tambah/hapus elemen) untuk auto-snapshot
+    const observer = new MutationObserver(() => scheduleSnapshot());
+    observer.observe(pageContent, { childList:true, subtree:true, characterData:true, attributes:true, attributeFilter:['style','data-align','src','href'] });
+  }
+
+  // Setelah restore snapshot, semua tombol/listener perlu di-pasang ulang karena innerHTML diganti total.
+  function rebindAllAfterRestore(){
+    document.querySelectorAll('[data-editable]').forEach(el => el.setAttribute('contenteditable', document.body.classList.contains('edit-mode') ? 'true' : 'false'));
+    document.querySelectorAll('.card-delete').forEach(btn => btn.addEventListener('click', () => btn.closest('.project-card').remove()));
+    document.querySelectorAll('[data-add]').forEach(attachAddCardBtn);
+    document.querySelectorAll('[data-link]').forEach(attachLinkEditor);
+    document.querySelectorAll('.proof-link').forEach(updateProofLinkState);
+    document.querySelectorAll('[data-doc-add]').forEach(attachDocAdd);
+    document.querySelectorAll('.doc-thumb').forEach(thumb => { attachThumbZoom(thumb); const del = thumb.querySelector('.thumb-del'); if (del) attachThumbDelete(del); });
+    document.querySelectorAll('.skill-logo').forEach(attachSkillLogo);
+    document.querySelectorAll('.skill-level').forEach(lv => attachSkillLevel(lv));
+    document.querySelectorAll('.skill-card .card-delete').forEach(btn => btn.addEventListener('click', () => btn.closest('.skill-card').remove()));
+    document.querySelectorAll('.bab-delete-btn').forEach(btn => btn.addEventListener('click', () => {
+      if (!confirm('Hapus seluruh Bab ini beserta semua isinya? Tindakan ini tidak bisa dibatalkan.')) return;
+      btn.closest('[data-bab]').remove();
+      renumberBabAndSubbab();
+    }));
+    document.querySelectorAll('.subbab-delete').forEach(btn => btn.addEventListener('click', () => {
+      if (!confirm('Hapus sub-bab ini beserta semua isinya?')) return;
+      btn.closest('[data-subbab]').remove();
+      renumberBabAndSubbab();
+    }));
+    document.querySelectorAll('[data-add-subbab]').forEach(attachAddSubbabBtn);
+    document.querySelectorAll('a').forEach(a => a.addEventListener('click', (e) => { if (document.body.classList.contains('edit-mode')) e.preventDefault(); }));
+    document.querySelectorAll('.reveal').forEach(el => { el.classList.add('in'); io.observe(el); });
+    document.querySelectorAll('.drag-handle').forEach(attachDragHandle);
+    renumberBabAndSubbab();
+  }
+
+  // ============================================================
+  // DRAG TO REORDER — Bab, Sub-Bab, dan Kartu Proyek masing-masing
+  // bisa ditarik-pindah lewat ikon ⠿ di pojoknya. Memakai native
+  // HTML5 Drag & Drop API supaya tidak perlu library tambahan.
+  // ============================================================
+  function getDragContainer(type, handle){
+    if (type === 'bab') return handle.closest('[data-bab]');
+    if (type === 'subbab') return handle.closest('[data-subbab]');
+    if (type === 'card') return handle.closest('.project-card, .skill-card');
+    return null;
+  }
+  function getDragParent(type, el){
+    if (type === 'bab') return el.parentElement; // body, langsung di antara section-section
+    if (type === 'subbab') return el.parentElement; // .wrap di dalam bab
+    if (type === 'card') return el.parentElement; // .project-grid atau .skill-grid
+    return el.parentElement;
+  }
+  function attachDragHandle(handle){
+    const type = handle.getAttribute('data-drag-type');
+    const item = getDragContainer(type, handle);
+    if (!item) return;
+    item.setAttribute('draggable', 'false'); // hanya bisa di-drag lewat handle, bukan klik sembarang di kartu
+    item.setAttribute('data-drag-role', type);
+    handle.addEventListener('mousedown', () => { item.setAttribute('draggable', 'true'); });
+    handle.addEventListener('touchstart', () => { item.setAttribute('draggable', 'true'); }, { passive:true });
+    item.addEventListener('dragend', () => {
+      item.setAttribute('draggable', 'false');
+      item.classList.remove('dragging');
+      document.querySelectorAll('.drag-over-top,.drag-over-bottom').forEach(el => el.classList.remove('drag-over-top','drag-over-bottom'));
+      pushSnapshotSoon();
+    });
+    item.addEventListener('dragstart', (e) => {
+      e.stopPropagation();
+      item.classList.add('dragging');
+      item.setAttribute('data-dragging-role', type);
+      e.dataTransfer.effectAllowed = 'move';
+      e.dataTransfer.setData('text/plain', type); // beberapa browser butuh ini supaya drag valid
+    });
+    item.addEventListener('dragover', (e) => {
+      const dragging = document.querySelector('[data-dragging-role="' + type + '"]');
+      if (!dragging || dragging === item) return;
+      if (item.getAttribute('data-drag-role') !== type) return; // hanya boleh drop ke level yang sama (bab-ke-bab, subbab-ke-subbab, card-ke-card)
+      e.preventDefault();
+      e.stopPropagation();
+      const rect = item.getBoundingClientRect();
+      const before = (e.clientY - rect.top) < rect.height / 2;
+      item.classList.toggle('drag-over-top', before);
+      item.classList.toggle('drag-over-bottom', !before);
+    });
+    item.addEventListener('dragleave', (e) => { e.stopPropagation(); item.classList.remove('drag-over-top','drag-over-bottom'); });
+    item.addEventListener('drop', (e) => {
+      const dragging = document.querySelector('[data-dragging-role="' + type + '"]');
+      if (!dragging || dragging === item || item.getAttribute('data-drag-role') !== type) return;
+      e.preventDefault();
+      e.stopPropagation();
+      item.classList.remove('drag-over-top','drag-over-bottom');
+      const rect = item.getBoundingClientRect();
+      const before = (e.clientY - rect.top) < rect.height / 2;
+      const parent = item.parentElement;
+      if (before) parent.insertBefore(dragging, item);
+      else parent.insertBefore(dragging, item.nextSibling);
+      dragging.removeAttribute('data-dragging-role');
+      renumberBabAndSubbab();
+    });
+  }
+  let dragSnapshotTimer = null;
+  function pushSnapshotSoon(){ clearTimeout(dragSnapshotTimer); dragSnapshotTimer = setTimeout(pushSnapshot, 200); }
+  document.querySelectorAll('.drag-handle').forEach(attachDragHandle);
+
+  // ---------- Toolbar minimize/expand (penting untuk HP, biar panel tidak menutupi teks) ----------
+  const editToolbarEl = document.getElementById('editToolbar');
+  const toolbarMinBtn = document.getElementById('toolbarMinimize');
+  function setToolbarCollapsed(collapsed){
+    editToolbarEl.classList.toggle('collapsed', collapsed);
+    toolbarMinBtn.textContent = collapsed ? '✎' : '−';
+  }
+  toolbarMinBtn.addEventListener('click', () => {
+    setToolbarCollapsed(!editToolbarEl.classList.contains('collapsed'));
+  });
+
+  // ---------- Link (href) editor via pencil button ----------
+  // Catatan: tombol pencil (data-link) berada DI LUAR tag <a> (sebagai sibling
+  // di dalam .card-links), bukan di dalamnya — jadi cari <a> via sibling,
+  // bukan via closest('a').
+  let pendingUploadTarget = null;
+  function findProofLink(btn){
+    const container = btn.closest('.card-links') || btn.parentElement;
+    if (!container) return null;
+    return container.querySelector('a');
+  }
+  function updateProofLinkState(a){
+    if (!a) return;
+    const href = a.getAttribute('href') || '';
+    const hasLink = href.trim() !== '' && href.trim() !== '#';
+    a.classList.toggle('no-link', !hasLink);
+    if (!hasLink){
+      a.setAttribute('href', '#');
+      // simpan label asli sebelum diganti, supaya bisa dikembalikan
+      if (!a.dataset.labelBackup) a.dataset.labelBackup = a.textContent;
+      a.textContent = 'Tanpa bukti/link';
+    } else if (a.dataset.labelBackup){
+      // baru diisi kembali setelah sebelumnya kosong -> kembalikan label asli
+      a.textContent = a.dataset.labelBackup;
+      delete a.dataset.labelBackup;
+    }
+  }
+  function attachLinkEditor(btn){
+    btn.addEventListener('click', () => {
+      const a = findProofLink(btn);
+      if (!a) return;
+      const current = a.getAttribute('href') || '';
+      const currentVal = (current === '#' ? '' : current);
+      const url = prompt(
+        'Masukkan URL tautan bukti (contoh: link Google Drive, foto, atau dokumen).\n\nBelum punya link bukti? Kosongkan lalu klik OK — kartu ini akan ditandai "Tanpa bukti/link" dan tetap bisa ditampilkan.',
+        currentVal
+      );
+      if (url === null) return; // user klik Cancel, tidak ada perubahan
+      const trimmed = url.trim();
+      if (trimmed === ''){
+        a.setAttribute('href', '#');
+        updateProofLinkState(a);
+        editStatus.textContent = 'Tautan dikosongkan — kartu ditandai tanpa bukti.';
+      } else {
+        a.setAttribute('href', trimmed);
+        updateProofLinkState(a);
+        editStatus.textContent = 'Tautan diperbarui.';
+      }
+    });
+  }
+  document.querySelectorAll('[data-link]').forEach(attachLinkEditor);
+  document.querySelectorAll('.proof-link').forEach(updateProofLinkState);
+  // prevent navigation while editing text inside links
+  document.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', (e) => { if (document.body.classList.contains('edit-mode')) e.preventDefault(); });
+  });
+
+  // ---------- Documentation gallery uploader (boleh lebih dari satu foto) ----------
+  const fileInput = document.getElementById('fileInput');
+  function attachDocAdd(btn){
+    btn.addEventListener('click', () => {
+      if (!document.body.classList.contains('edit-mode')) return;
+      pendingUploadTarget = { type:'doc', gallery: btn.closest('.doc-gallery') };
+      fileInput.click();
+    });
+  }
+  // ---------- Lightbox: klik foto dokumentasi untuk lihat ukuran penuh ----------
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  function openLightbox(src){ lightboxImg.src = src; lightbox.classList.add('open'); }
+  function closeLightbox(){ lightbox.classList.remove('open'); lightboxImg.src=''; }
+  lightbox.addEventListener('click', (e) => { if (e.target === lightbox || e.target.classList.contains('lb-close')) closeLightbox(); });
+  function attachThumbZoom(thumb){
+    const img = thumb.querySelector('img');
+    if (img) img.addEventListener('click', (e) => {
+      if (document.body.classList.contains('edit-mode') && e.target.closest('.thumb-del')) return;
+      openLightbox(img.src);
+    });
+  }
+  document.querySelectorAll('.doc-thumb').forEach(attachThumbZoom);
+
+  function attachThumbDelete(delBtn){
+    delBtn.addEventListener('click', (e) => { e.stopPropagation(); delBtn.closest('.doc-thumb').remove(); });
+  }
+  document.querySelectorAll('.thumb-del').forEach(attachThumbDelete);
+  document.querySelectorAll('[data-doc-add]').forEach(attachDocAdd);
+
+  fileInput.addEventListener('change', () => {
+    const file = fileInput.files[0];
+    if (!file || !pendingUploadTarget) return;
+    const reader = new FileReader();
+    reader.onload = () => {
+      if (pendingUploadTarget.type === 'doc'){
+        const gallery = pendingUploadTarget.gallery;
+        const thumb = document.createElement('div');
+        thumb.className = 'doc-thumb';
+        thumb.innerHTML = '<img src="' + reader.result + '" alt="Dokumentasi proyek"><button class="thumb-del" title="Hapus foto">×</button>';
+        attachThumbDelete(thumb.querySelector('.thumb-del'));
+        attachThumbZoom(thumb);
+        const addBtn = gallery.querySelector('[data-doc-add]');
+        gallery.insertBefore(thumb, addBtn);
+        const emptyNote = gallery.querySelector('.doc-empty-note');
+        if (emptyNote) emptyNote.remove();
+      } else if (pendingUploadTarget.type === 'photo'){
+        const img = document.getElementById('profilePhoto');
+        const ph = document.getElementById('photoPlaceholder');
+        img.src = reader.result;
+        img.style.objectPosition = '50% 50%';
+        img.classList.add('has-photo');
+        ph.classList.add('has-photo');
+        if (typeof window.__resetPhotoZoom === 'function') window.__resetPhotoZoom();
+        // Langsung masuk mode geser setelah upload
+        setTimeout(() => document.getElementById('photoFrame').classList.add('repositioning'), 100);
+      } else if (pendingUploadTarget.type === 'skill-logo'){
+        const box = pendingUploadTarget.box;
+        const img = box.querySelector('img');
+        const ph = box.querySelector('.placeholder-icon');
+        img.src = reader.result;
+        img.classList.add('has-photo');
+        if (ph) ph.classList.remove('has-photo');
+      } else if (pendingUploadTarget.type === 'icon-wrap'){
+        // Ganti ikon SVG dengan PNG custom
+        const wrap = pendingUploadTarget.wrap;
+        const customImg = wrap.querySelector('.custom-icon');
+        customImg.src = reader.result;
+        customImg.classList.add('active');
+        wrap.classList.add('has-custom-icon');
+        // Simpan data URL ke atribut agar ikut saat Simpan & Unduh
+        wrap.setAttribute('data-custom-icon-src', reader.result);
+      } else if (pendingUploadTarget.type === 'custom-bg'){
+        root.style.setProperty('--custom-bg-img', 'url(' + reader.result + ')');
+        customBgFileName.textContent = '✓ Gambar latar tersimpan (' + file.name + ')';
+        const preview = document.getElementById('customBgPreview');
+        preview.src = reader.result;
+        preview.style.display = 'block';
+        activateCustomBg();
+      }
+      editStatus.textContent = 'Gambar berhasil ditambahkan.';
+      fileInput.value = '';
+    };
+    reader.readAsDataURL(file);
+  });
+  document.getElementById('photoOverlay')?.addEventListener('click', () => {
+    pendingUploadTarget = { type:'photo' };
+    fileInput.click();
+  });
+
+  // ---------- ICON PICKER: daftar ikon preset sesuai role (QS, Drafter, Hidrologi, dst) ----------
+  const ICON_PRESET_IDS = [
+    'i-ruler','i-tsquare','i-compass','i-calculator','i-building','i-bridge','i-dam',
+    'i-drop','i-river','i-irrigation','i-group','i-certificate','i-briefcase',
+    'i-laptop','i-pencil','i-chart','i-cube','i-hardhat','i-document','i-globe',
+    'i-calendar','i-pin','i-emblem'
+  ];
+  const iconPickerModal = document.getElementById('iconPickerModal');
+  const iconPickerGrid  = document.getElementById('iconPickerGrid');
+  const iconPickerUploadBtn = document.getElementById('iconPickerUpload');
+  const iconPickerCancelBtn = document.getElementById('iconPickerCancel');
+  const iconPickerResetBtn  = document.getElementById('iconPickerReset');
+  let iconPickerTarget = null; // { kind:'icon-wrap', wrap } atau { kind:'skill-logo', box }
+
+  function buildIconPickerGrid(currentIconId){
+    iconPickerGrid.innerHTML = '';
+    ICON_PRESET_IDS.forEach(id => {
+      const item = document.createElement('div');
+      item.className = 'icon-picker-item' + (id === currentIconId ? ' selected' : '');
+      item.setAttribute('data-icon-id', id);
+      item.innerHTML = '<svg><use href="#' + id + '"/></svg>';
+      item.addEventListener('click', () => applyPresetIcon(id));
+      iconPickerGrid.appendChild(item);
+    });
+  }
+  function applyPresetIcon(iconId){
+    if (!iconPickerTarget) return;
+    if (iconPickerTarget.kind === 'icon-wrap'){
+      const wrap = iconPickerTarget.wrap;
+      const svgUse = wrap.querySelector('svg.icon use');
+      if (svgUse) svgUse.setAttribute('href', '#' + iconId);
+      wrap.setAttribute('data-icon-id', iconId);
+      // matikan PNG custom kalau ada, supaya ikon preset yang baru kelihatan
+      const customImg = wrap.querySelector('.custom-icon');
+      if (customImg){ customImg.classList.remove('active'); customImg.src = ''; }
+      wrap.classList.remove('has-custom-icon');
+      wrap.removeAttribute('data-custom-icon-src');
+    } else if (iconPickerTarget.kind === 'skill-logo'){
+      const box = iconPickerTarget.box;
+      const svgUse = box.querySelector('svg.placeholder-icon use');
+      if (svgUse) svgUse.setAttribute('href', '#' + iconId);
+      box.setAttribute('data-icon-id', iconId);
+      const img = box.querySelector('img');
+      const ph  = box.querySelector('.placeholder-icon');
+      if (img){ img.classList.remove('has-photo'); img.src = ''; img.removeAttribute('src'); }
+      if (ph) ph.classList.remove('has-photo');
+    }
+    closeIconPicker();
+    editStatus.textContent = 'Ikon diperbarui.';
+  }
+  function openIconPicker(kind, el){
+    iconPickerTarget = { kind, [kind === 'icon-wrap' ? 'wrap' : 'box']: el };
+    const currentIconId = el.getAttribute('data-icon-id') || '';
+    buildIconPickerGrid(currentIconId);
+    // tombol "Hapus PNG Custom" hanya tampil kalau memang sedang pakai PNG custom
+    const hasCustomPng =
+      (kind === 'icon-wrap' && el.querySelector('.custom-icon.active')) ||
+      (kind === 'skill-logo' && el.querySelector('img.has-photo'));
+    iconPickerResetBtn.style.display = hasCustomPng ? 'block' : 'none';
+    iconPickerModal.classList.add('open');
+  }
+  function closeIconPicker(){
+    iconPickerModal.classList.remove('open');
+    iconPickerTarget = null;
+  }
+  iconPickerCancelBtn.addEventListener('click', closeIconPicker);
+  iconPickerModal.addEventListener('click', (e) => { if (e.target === iconPickerModal) closeIconPicker(); });
+  iconPickerUploadBtn.addEventListener('click', () => {
+    if (!iconPickerTarget) return;
+    if (iconPickerTarget.kind === 'icon-wrap'){
+      pendingUploadTarget = { type:'icon-wrap', wrap: iconPickerTarget.wrap };
+    } else {
+      pendingUploadTarget = { type:'skill-logo', box: iconPickerTarget.box };
+    }
+    closeIconPicker();
+    fileInput.accept = 'image/png';
+    fileInput.click();
+    fileInput.accept = 'image/*';
+  });
+  iconPickerResetBtn.addEventListener('click', () => {
+    if (!iconPickerTarget) return;
+    if (iconPickerTarget.kind === 'icon-wrap'){
+      const wrap = iconPickerTarget.wrap;
+      const customImg = wrap.querySelector('.custom-icon');
+      if (customImg){ customImg.classList.remove('active'); customImg.src = ''; }
+      wrap.classList.remove('has-custom-icon');
+      wrap.removeAttribute('data-custom-icon-src');
+    } else {
+      const box = iconPickerTarget.box;
+      const img = box.querySelector('img');
+      const ph  = box.querySelector('.placeholder-icon');
+      if (img){ img.classList.remove('has-photo'); img.removeAttribute('src'); }
+      if (ph) ph.classList.remove('has-photo');
+    }
+    closeIconPicker();
+    editStatus.textContent = 'Kembali ke ikon bawaan — silakan pilih ikon baru.';
+  });
+
+  // ---------- Klik icon-wrap saat mode edit → buka Icon Picker (preset atau upload PNG) ----------
+  document.addEventListener('click', (e) => {
+    if (!document.body.classList.contains('edit-mode')) return;
+    const wrap = e.target.closest('.icon-wrap');
+    if (!wrap) return;
+    e.stopPropagation();
+    openIconPicker('icon-wrap', wrap);
+  });
+
+  // Restore custom icon dari atribut data (penting saat file di-load ulang setelah Simpan)
+  document.querySelectorAll('.icon-wrap[data-custom-icon-src]').forEach(wrap => {
+    const src = wrap.getAttribute('data-custom-icon-src');
+    if (src){
+      const img = wrap.querySelector('.custom-icon');
+      if (img){ img.src = src; img.classList.add('active'); }
+      wrap.classList.add('has-custom-icon');
+    }
+  });
+
+  // ---------- Foto profil: drag (posisi), zoom (perbesar/perkecil), & pilih bentuk frame ----------
+  (function(){
+    const frame      = document.getElementById('photoFrame');
+    const img        = document.getElementById('profilePhoto');
+    const done       = document.getElementById('photoDone');
+    const zoomRange  = document.getElementById('photoZoomRange');
+    const shapeRow   = document.getElementById('photoShapeRow');
+    let dragging = false, startX, startY, startPX, startPY;
+    let zoom = 100; // persen, 100 = ukuran normal
+
+    // Elemen kontrol yang TIDAK boleh memicu drag-geser foto saat ditekan/disentuh
+    function isControlTarget(target){
+      return target === done || target.closest('.photo-zoom-row') || target.closest('.photo-shape-row');
+    }
+
+    // Klik foto saat edit & sudah ada foto → masuk mode geser
+    img.addEventListener('click', (e) => {
+      if (!document.body.classList.contains('edit-mode')) return;
+      if (!img.classList.contains('has-photo')) return;
+      if (frame.classList.contains('repositioning')) return;
+      e.stopPropagation();
+      frame.classList.add('repositioning');
+    });
+    // Selesai
+    done.addEventListener('click', (e) => {
+      e.stopPropagation();
+      frame.classList.remove('repositioning');
+    });
+
+    function parsePos(){
+      const p = (img.style.objectPosition || '50% 50%').split(' ');
+      return { x: parseFloat(p[0]) || 50, y: parseFloat(p[1]) || 50 };
+    }
+    function clamp(v){ return Math.min(100, Math.max(0, v)); }
+
+    function onDown(cx, cy){
+      if (!frame.classList.contains('repositioning')) return;
+      dragging = true; startX = cx; startY = cy;
+      const p = parsePos(); startPX = p.x; startPY = p.y;
+    }
+    function onMove(cx, cy){
+      if (!dragging) return;
+      // drag ke kanan → isi foto bergeser ke kiri (% turun), dan sebaliknya — terasa natural
+      const nx = clamp(startPX - (cx - startX) / frame.offsetWidth  * 100);
+      const ny = clamp(startPY - (cy - startY) / frame.offsetHeight * 100);
+      img.style.objectPosition = nx + '% ' + ny + '%';
+    }
+    function onUp(){ dragging = false; }
+
+    frame.addEventListener('mousedown',  (e) => { if (!isControlTarget(e.target)) onDown(e.clientX, e.clientY); });
+    window.addEventListener('mousemove', (e) => onMove(e.clientX, e.clientY));
+    window.addEventListener('mouseup',   onUp);
+    frame.addEventListener('touchstart', (e) => {
+      if (isControlTarget(e.target)) return;
+      const t = e.touches[0]; onDown(t.clientX, t.clientY);
+    }, { passive:true });
+    window.addEventListener('touchmove', (e) => {
+      if (!dragging) return; e.preventDefault();
+      const t = e.touches[0]; onMove(t.clientX, t.clientY);
+    }, { passive:false });
+    window.addEventListener('touchend', onUp);
+
+    // ---------- Zoom: perbesar / perkecil foto dengan slider ----------
+    function applyZoom(){
+      img.style.transform = 'scale(' + (zoom / 100) + ')';
+    }
+    if (zoomRange){
+      zoomRange.addEventListener('input', () => {
+        zoom = parseFloat(zoomRange.value) || 100;
+        applyZoom();
+      });
+      // Cegah drag-geser foto ikut terpicu saat menarik slider
+      zoomRange.addEventListener('mousedown', (e) => e.stopPropagation());
+      zoomRange.addEventListener('touchstart', (e) => e.stopPropagation(), { passive:true });
+    }
+
+    // ---------- Pilihan bentuk frame: bulat, kotak rounded, fillet, atau kotak tegas ----------
+    if (shapeRow){
+      shapeRow.querySelectorAll('button[data-shape]').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const shape = btn.getAttribute('data-shape');
+          frame.classList.remove('shape-circle','shape-rounded','shape-fillet','shape-square');
+          frame.classList.add('shape-' + shape);
+          frame.setAttribute('data-shape', shape);
+          shapeRow.querySelectorAll('button[data-shape]').forEach(b => b.classList.toggle('active', b === btn));
+          editStatus.textContent = 'Bentuk foto profil diperbarui.';
+        });
+      });
+    }
+
+    // Simpan referensi global supaya bagian upload-foto (di event fileInput) bisa reset zoom
+    window.__resetPhotoZoom = function(){
+      zoom = 100;
+      if (zoomRange) zoomRange.value = 100;
+      applyZoom();
+    };
+  })();
+
+  // ---------- Skill cards: upload logo, atur tingkat kemampuan, tambah/hapus software ----------
+  const LEVEL_LABELS = ['Pemula','Dasar','Menengah','Mahir','Ahli'];
+  function refreshSkillLevel(levelBox, level){
+    levelBox.setAttribute('data-level', level);
+    levelBox.querySelectorAll('.lv-dot').forEach((dot, i) => dot.classList.toggle('lv-on', i < level));
+    const label = levelBox.closest('.skill-card').querySelector('.skill-level-label');
+    if (label) label.textContent = LEVEL_LABELS[level - 1] || LEVEL_LABELS[0];
+  }
+  function attachSkillLogo(box){
+    box.addEventListener('click', () => {
+      if (!document.body.classList.contains('edit-mode')) return;
+      openIconPicker('skill-logo', box);
+    });
+  }
+  function attachSkillLevel(levelBox){
+    levelBox.querySelectorAll('.lv-dot').forEach((dot, i) => {
+      dot.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (!document.body.classList.contains('edit-mode')) return;
+        refreshSkillLevel(levelBox, i + 1);
+      });
+    });
+  }
+  document.querySelectorAll('.skill-logo').forEach(attachSkillLogo);
+  document.querySelectorAll('.skill-level').forEach(lv => {
+    attachSkillLevel(lv);
+    refreshSkillLevel(lv, parseInt(lv.getAttribute('data-level'), 10) || 3);
+  });
+  document.querySelectorAll('.skill-card .card-delete').forEach(btn => {
+    btn.addEventListener('click', () => btn.closest('.skill-card').remove());
+  });
+
+  document.getElementById('btnAddSkill')?.addEventListener('click', () => {
+    const grid = document.getElementById('skillGrid');
+    const card = document.createElement('div');
+    card.className = 'skill-card';
+    card.innerHTML = `
+      <button class="drag-handle" draggable="true" data-drag-type="card" title="Tarik untuk ubah urutan kartu">⠿</button><button class="card-delete" title="Hapus">×</button>
+      <div class="skill-logo" data-skill-logo data-icon-id="i-laptop" title="Klik untuk ganti ikon/logo">
+        <svg class="icon placeholder-icon"><use href="#i-laptop"/></svg>
+        <img alt="Logo software" class="">
+      </div>
+      <h4 data-editable contenteditable="false">Nama Software</h4>
+      <p class="skill-desc" data-editable contenteditable="false"></p>
+      <div class="skill-level" data-level="3">
+        <span class="lv-dot"></span><span class="lv-dot"></span><span class="lv-dot"></span><span class="lv-dot"></span><span class="lv-dot"></span>
+      </div>
+      <span class="skill-level-label">Menengah</span>
+    `;
+    grid.appendChild(card);
+    attachSkillLogo(card.querySelector('.skill-logo'));
+    const lv = card.querySelector('.skill-level');
+    attachSkillLevel(lv);
+    refreshSkillLevel(lv, 3);
+    card.querySelector('.card-delete').addEventListener('click', () => card.remove());
+    card.querySelector('h4').focus();
+  });
+
+  // ---------- Floating rich-text toolbar (Bold/Italic/Underline/Align/Font/Warna) ----------
+  // Toolbar selalu menempel di posisi tetap (atas-tengah, di bawah nav) saat box [data-editable]
+  // difokus/diklik — TIDAK PERNAH menutupi konten manapun karena tidak mengikuti posisi box.
+  const textToolbar = document.getElementById('textToolbar');
+  let activeEditableBox = null;
+
+  function hideTextToolbar(){
+    textToolbar.classList.remove('show');
+    activeEditableBox = null;
+  }
+
+  function showToolbarFor(box){
+    activeEditableBox = box;
+    textToolbar.classList.add('show');
+    // Sinkronkan dropdown align supaya merefleksikan box yang sedang aktif
+    const align = box.getAttribute('data-align') || 'left';
+    textToolbar.querySelectorAll('button[data-align]').forEach(b => {
+      b.classList.toggle('active', b.getAttribute('data-align') === align);
+    });
+    // Kalau box ada di belakang toolbar (terlalu dekat ke atas viewport), scroll sedikit agar box tetap terlihat penuh
+    requestAnimationFrame(() => {
+      const boxRect = box.getBoundingClientRect();
+      const tbRect = textToolbar.getBoundingClientRect();
+      const clearance = tbRect.bottom + 12;
+      if (boxRect.top < clearance){
+        window.scrollBy({ top: boxRect.top - clearance, behavior:'smooth' });
+      }
+    });
+  }
+
+  // Toolbar muncul begitu box diklik/difokus
+  document.addEventListener('focusin', (e) => {
+    if (!document.body.classList.contains('edit-mode')) return;
+    const box = e.target.closest && e.target.closest('[data-editable]');
+    if (box) showToolbarFor(box);
+  });
+  document.addEventListener('click', (e) => {
+    if (!document.body.classList.contains('edit-mode')) return;
+    const box = e.target.closest && e.target.closest('[data-editable]');
+    if (box) showToolbarFor(box);
+  });
+  // Sembunyikan saat klik di luar toolbar maupun box yang sedang aktif
+  document.addEventListener('mousedown', (e) => {
+    if (textToolbar.contains(e.target)) return;
+    if (e.target.closest && e.target.closest('[data-editable]')) return;
+    hideTextToolbar();
+  });
+
+  textToolbar.querySelectorAll('button[data-cmd]').forEach(btn => {
+    btn.addEventListener('mousedown', (e) => e.preventDefault());
+    btn.addEventListener('click', () => { document.execCommand(btn.getAttribute('data-cmd'), false, null); });
+  });
+  // Tombol rata kiri/tengah/kanan/kanan-kiri — diterapkan ke seluruh box [data-editable] yang sedang aktif
+  textToolbar.querySelectorAll('button[data-align]').forEach(btn => {
+    btn.addEventListener('mousedown', (e) => e.preventDefault());
+    btn.addEventListener('click', () => {
+      const box = activeEditableBox || (() => {
+        const sel = window.getSelection();
+        if (!sel || sel.rangeCount === 0) return null;
+        let node = sel.anchorNode;
+        node = node && node.nodeType === 3 ? node.parentElement : node;
+        return node && node.closest ? node.closest('[data-editable]') : null;
+      })();
+      if (!box) return;
+      box.setAttribute('data-align', btn.getAttribute('data-align'));
+      textToolbar.querySelectorAll('button[data-align]').forEach(b => b.classList.toggle('active', b === btn));
+    });
+  });
+  document.getElementById('toolbarFont')?.addEventListener('mousedown', (e) => e.stopPropagation());
+  document.getElementById('toolbarFont')?.addEventListener('change', (e) => {
+    if (e.target.value){ document.execCommand('fontName', false, e.target.value); }
+    e.target.value = '';
+  });
+  // Warna font — diterapkan ke teks yang diseleksi, atau ke seluruh box bila tidak ada seleksi
+  const toolbarColor = document.getElementById('toolbarColor');
+  toolbarColor.addEventListener('mousedown', (e) => e.stopPropagation());
+  toolbarColor.addEventListener('input', (e) => {
+    const sel = window.getSelection();
+    if (sel && !sel.isCollapsed && sel.rangeCount > 0){
+      document.execCommand('foreColor', false, e.target.value);
+    } else if (activeEditableBox){
+      activeEditableBox.style.color = e.target.value;
+    }
+  });
+
+  // ---------- Add / delete project cards (yang sudah ada di markup awal) ----------
+  document.querySelectorAll('.card-delete').forEach(btn => btn.addEventListener('click', () => btn.closest('.project-card').remove()));
+  document.querySelectorAll('[data-add]').forEach(attachAddCardBtn);
+
+  // ====================================================================
+  // PUBLISH via GitHub API — lebih andal dari browser, tidak kena CORS.
+  // Cara kerja: website push file ke GitHub repo kamu → Vercel/Netlify
+  //             deteksi perubahan → auto-deploy dalam ~30 detik.
+  //
+  // Kredensial disimpan di localStorage browser, bukan di file HTML.
+  // Isi sekali via tombol Setup, selesai.
+  // ====================================================================
+
+  function getGhCreds(){
+    return {
+      token : localStorage.getItem('gh_token')  || '',
+      owner : localStorage.getItem('gh_owner')  || 'tedydyk31',
+      repo  : localStorage.getItem('gh_repo')   || 'portofolio',
+      path  : localStorage.getItem('gh_path')   || 'index.html'
+    };
+  }
+
+  // ---------- Setup modal ----------
+  const ghSetupModal = document.getElementById('ghSetupModal');
+  function openGhSetup(){
+    const c = getGhCreds();
+    document.getElementById('ghTokenInput').value = c.token;
+    document.getElementById('ghOwnerInput').value = c.owner;
+    document.getElementById('ghRepoInput').value  = c.repo;
+    document.getElementById('ghPathInput').value  = c.path;
+    document.getElementById('ghSetupStatus').textContent = '';
+    ghSetupModal.style.display = 'flex';
+  }
+  document.getElementById('btnGhSetup')?.addEventListener('click', openGhSetup);
+  document.getElementById('ghSetupCancel')?.addEventListener('click', () => ghSetupModal.style.display = 'none');
+
+  document.getElementById('ghSetupTest')?.addEventListener('click', async () => {
+    const { token, owner, repo, path } = {
+      token : document.getElementById('ghTokenInput').value.trim(),
+      owner : document.getElementById('ghOwnerInput').value.trim(),
+      repo  : document.getElementById('ghRepoInput').value.trim(),
+      path  : document.getElementById('ghPathInput').value.trim()
+    };
+    const st = document.getElementById('ghSetupStatus');
+    if (!token || !owner || !repo){ st.textContent = '⚠️ Isi semua kolom dulu.'; return; }
+    st.style.color = '#4D6470'; st.textContent = '⏳ Memeriksa koneksi ke GitHub…';
+    try {
+      const r = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}`, {
+        headers: { Authorization: `Bearer ${token}`, Accept: 'application/vnd.github+json' }
+      });
+      if (r.ok){
+        st.style.color = '#1a7a4a';
+        st.textContent = `✅ Terhubung! File ditemukan di ${owner}/${repo}/${path}`;
+      } else if (r.status === 401){
+        st.style.color = '#8b1a1a'; st.textContent = '❌ Token salah atau sudah kadaluarsa.';
+      } else if (r.status === 404){
+        st.style.color = '#8b1a1a'; st.textContent = `❌ Repo atau file tidak ditemukan. Cek nama repo/path.`;
+      } else {
+        st.style.color = '#8b1a1a'; st.textContent = `❌ Error ${r.status}`;
+      }
+    } catch(e){ st.style.color = '#8b1a1a'; st.textContent = `❌ ${e.message}`; }
+  });
+
+  document.getElementById('ghSetupSave')?.addEventListener('click', () => {
+    const token = document.getElementById('ghTokenInput').value.trim();
+    const owner = document.getElementById('ghOwnerInput').value.trim();
+    const repo  = document.getElementById('ghRepoInput').value.trim();
+    const path  = document.getElementById('ghPathInput').value.trim();
+    const st    = document.getElementById('ghSetupStatus');
+    if (!token || !owner || !repo || !path){ st.textContent = '⚠️ Isi semua kolom.'; return; }
+    localStorage.setItem('gh_token', token);
+    localStorage.setItem('gh_owner', owner);
+    localStorage.setItem('gh_repo',  repo);
+    localStorage.setItem('gh_path',  path);
+    st.style.color = '#1a7a4a'; st.textContent = '✅ Tersimpan!';
+    setTimeout(() => { ghSetupModal.style.display = 'none'; }, 900);
+  });
+
+  // ---------- Helper: build HTML bersih dari DOM saat ini ----------
+  function buildCleanHTML(){
+    const clone = document.documentElement.cloneNode(true);
+    clone.querySelectorAll('[contenteditable]').forEach(el => el.setAttribute('contenteditable','false'));
+    clone.classList.remove('edit-mode');
+    return '<!DOCTYPE html>\n' + clone.outerHTML;
+  }
+
+  // ---------- PUBLISH: push ke GitHub → Vercel/Netlify auto-deploy ----------
+  document.getElementById('btnSave')?.addEventListener('click', async () => {
+    const btn = document.getElementById('btnSave');
+    const { token, owner, repo, path } = getGhCreds();
+
+    // Kalau belum setup, buka modal setup dulu
+    if (!token){
+      openGhSetup();
+      editStatus.textContent = '⚠️ Isi pengaturan GitHub dulu (sekali aja).';
+      return;
+    }
+
+    btn.disabled = true; btn.innerHTML = '⏳ Mengirim…';
+    editStatus.textContent = '⏳ Mengirim perubahan ke GitHub…';
+
+    try {
+      const html = buildCleanHTML();
+
+      // Step 1: Ambil SHA file yang ada di GitHub (wajib untuk update)
+      editStatus.textContent = '⏳ Membaca file saat ini…';
+      const getResp = await fetch(
+        `https://api.github.com/repos/${owner}/${repo}/contents/${path}`,
+        { headers: { Authorization:`Bearer ${token}`, Accept:'application/vnd.github+json' } }
+      );
+      if (!getResp.ok && getResp.status !== 404){
+        if (getResp.status === 401) throw new Error('Token GitHub tidak valid. Klik ⚙️ Setup untuk update token.');
+        throw new Error(`Tidak bisa baca repo (${getResp.status}). Cek nama repo di ⚙️ Setup.`);
+      }
+      const existing = getResp.ok ? await getResp.json() : null;
+      const currentSha = existing ? existing.sha : undefined;
+
+      // Step 2: Encode HTML ke base64
+      // (btoa tidak support karakter non-latin, pakai TextEncoder)
+      const bytes = new TextEncoder().encode(html);
+      let binary = '';
+      bytes.forEach(b => binary += String.fromCharCode(b));
+      const b64 = btoa(binary);
+
+      // Step 3: Push ke GitHub
+      editStatus.textContent = '⏳ Mengirim ke GitHub…';
+      const body = {
+        message: `Update portofolio — ${new Date().toLocaleString('id-ID')}`,
+        content: b64,
+        ...(currentSha ? { sha: currentSha } : {})
+      };
+      const putResp = await fetch(
+        `https://api.github.com/repos/${owner}/${repo}/contents/${path}`,
+        {
+          method: 'PUT',
+          headers: {
+            Authorization:`Bearer ${token}`,
+            Accept:'application/vnd.github+json',
+            'Content-Type':'application/json'
+          },
+          body: JSON.stringify(body)
+        }
+      );
+      if (!putResp.ok){
+        const errJson = await putResp.json().catch(() => ({}));
+        if (putResp.status === 401) throw new Error('Token GitHub tidak valid. Klik ⚙️ Setup untuk update token.');
+        if (putResp.status === 409) throw new Error('Konflik file — coba lagi.');
+        throw new Error(`Push gagal (${putResp.status}): ${errJson.message || ''}`);
+      }
+
+      // Sukses!
+      btn.innerHTML = '✅ Terkirim!'; btn.style.background = '#1a7a4a';
+      editStatus.textContent = `✅ Berhasil! Vercel/Netlify sedang deploy otomatis (~1 menit). Cek situsmu sebentar lagi.`;
+      setTimeout(() => { btn.innerHTML = '🚀 Publish'; btn.style.background = ''; btn.disabled = false; }, 5000);
+
+    } catch(err){
+      console.error('[GitHub publish]', err);
+      btn.innerHTML = '❌ Gagal'; btn.style.background = '#8b1a1a';
+      editStatus.textContent = `❌ ${err.message}`;
+      setTimeout(() => { btn.innerHTML = '🚀 Publish'; btn.style.background = ''; btn.disabled = false; }, 6000);
+    }
+  });
+
+  // ---------- Unduh lokal (backup) ----------
+  document.getElementById('btnSaveLocal')?.addEventListener('click', () => {
+    const html = buildCleanHTML();
+    const blob = new Blob([html], { type:'text/html' });
+    const a = document.createElement('a'); a.href = URL.createObjectURL(blob);
+    a.download = 'index.html'; document.body.appendChild(a); a.click(); a.remove();
+    editStatus.textContent = 'File terunduh sebagai backup lokal.';
+  });
+
+
+  // ---------- Export PDF (A4 Landscape) — pakai print-to-PDF browser, semua link tetap aktif ----------
+  // Sebelum print: tiap project-card diberi label kecil "Bab X.Y Nama — No. urut" di pojok atas,
+  // supaya saat tiap proyek pindah ke halaman sendiri, asalnya tetap jelas. Kartu TERAKHIR di setiap
+  // Bab (bukan cuma sub-bab) ditandai print-last-in-bab agar tidak ada page-break kosong berlebih
+  // sebelum cover Bab selanjutnya — inilah yang mencegah halaman kosong di PDF.
+  function addPrintLabels(){
+    removePrintLabels();
+    // Hanya tandai kartu terakhir tiap Bab agar tidak ada page-break kosong di akhir Bab
+    // (tidak ada teks label BAB/sub-BAB yang ditulis di PDF)
+    document.querySelectorAll('[data-bab]').forEach(bab => {
+      const allCardsInBab = bab.querySelectorAll('.project-card');
+      if (allCardsInBab.length){
+        allCardsInBab[allCardsInBab.length - 1].classList.add('print-last-in-bab');
+      }
+    });
+  }
+  function removePrintLabels(){
+    document.querySelectorAll('.print-only-tag').forEach(el => el.remove());
+    document.querySelectorAll('.print-last-in-bab').forEach(el => el.classList.remove('print-last-in-bab'));
+  }
+  window.addEventListener('beforeprint', addPrintLabels);
+  window.addEventListener('afterprint', removePrintLabels);
+
+  function exportPdf(){
+    const wasEdit = document.body.classList.contains('edit-mode');
+    if (wasEdit) document.body.classList.remove('edit-mode');
+    const oldTitle = document.title;
+    const nameEl = document.querySelector('.hero h1');
+    document.title = 'Portofolio - ' + (nameEl ? nameEl.textContent.trim() : 'Tedy Kurniawan');
+    window.print();
+    document.title = oldTitle;
+    if (wasEdit) document.body.classList.add('edit-mode');
+  }
+  document.getElementById('btnExportPdfNav')?.addEventListener('click', exportPdf);
+  const btnExportPdfToolbar = document.getElementById('btnExportPdf');
+  if (btnExportPdfToolbar) btnExportPdfToolbar.addEventListener('click', exportPdf);
+
+  // ---------- nav + reveal ----------
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Bersihkan label "Belum ada dokumentasi" yang tertinggal jika galeri ternyata sudah berisi foto
+  document.querySelectorAll('.doc-gallery').forEach(gallery => {
+    const hasPhoto = gallery.querySelector('.doc-thumb');
+    const note = gallery.querySelector('.doc-empty-note');
+    if (hasPhoto && note) note.remove();
+  });
+
+  document.getElementById('footYear').textContent = new Date().getFullYear();
+
+  // ============================================================
+  // SISTEM BAB: penomoran otomatis, tambah/hapus Bab & Sub-Bab
+  // ============================================================
+  let babCounter = 0; // dipakai untuk id unik bab baru
+
+  function renumberBabAndSubbab(){
+    // BAB 1 = Profil (hero), selalu tetap "Bab 1" walau tidak punya data-bab
+    const babSections = Array.from(document.querySelectorAll('[data-bab]'));
+    babSections.forEach((sec, i) => {
+      const babNum = i + 2; // dimulai dari Bab 2 (Bab 1 = profil)
+      const label = sec.querySelector('.bab-number-label');
+      if (label) label.textContent = 'Bab ' + babNum;
+      // sub-bab di dalam bab ini diberi nomor X.Y
+      const subbabs = sec.querySelectorAll('[data-subbab]');
+      subbabs.forEach((sb, j) => {
+        const subLabel = sb.querySelector('.subbab-number-label');
+        if (subLabel) subLabel.textContent = babNum + '.' + (j + 1);
+      });
+    });
+  }
+  renumberBabAndSubbab();
+
+  // ---------- Hapus Bab (yang sudah ada di markup awal) ----------
+  document.querySelectorAll('.bab-delete-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (!confirm('Hapus seluruh Bab ini beserta semua isinya? Tindakan ini tidak bisa dibatalkan.')) return;
+      btn.closest('[data-bab]').remove();
+      renumberBabAndSubbab();
+    });
+  });
+
+  // ---------- Hapus sub-bab ----------
+  document.querySelectorAll('.subbab-delete').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (!confirm('Hapus sub-bab ini beserta semua isinya?')) return;
+      btn.closest('[data-subbab]').remove();
+      renumberBabAndSubbab();
+    });
+  });
+
+  // ---------- Tambah sub-bab baru (yang sudah ada di markup awal) ----------
+  document.querySelectorAll('[data-add-subbab]').forEach(attachAddSubbabBtn);
+
+  // ---------- Tambah Bab baru ----------
+  document.getElementById('btnAddBab')?.addEventListener('click', () => {
+    const babId = 'bab-custom-' + (++babCounter);
+    const gridId = 'grid-bab-' + babCounter;
+    const newBab = document.createElement('section');
+    newBab.id = babId;
+    newBab.className = 'dark-section bab-section reveal in';
+    newBab.setAttribute('data-bab', '');
+    newBab.setAttribute('data-bab-deletable', '');
+    newBab.innerHTML = `
+      <button class="drag-handle" draggable="true" data-drag-type="bab" title="Tarik untuk ubah urutan Bab">⠿</button>
+  <button class="bab-delete-btn" title="Hapus seluruh Bab ini">×</button>
+      <div class="wrap">
+        <div class="print-cover">
+          <div class="eyebrow reveal in bab-eyebrow"><span class="icon-wrap" data-icon-id="i-ruler"><svg class="icon"><use href="#i-ruler"/></svg><img class="custom-icon" alt="ikon custom"></span> <span class="bab-number-label" data-editable contenteditable="false"></span></div>
+          <h2 class="sec-title reveal in" data-editable contenteditable="false">Judul Bab Baru</h2>
+          <p class="sec-lede reveal in" data-editable contenteditable="false">Keterangan singkat untuk bab baru ini.</p>
+        </div>
+        <div style="height:56px;"></div>
+        <div class="role-block reveal in" data-subbab>
+          <div class="role-head"><button class="drag-handle" draggable="true" data-drag-type="subbab" title="Tarik untuk ubah urutan sub-bab">⠿</button>
+            <span class="icon-wrap" data-icon-id="i-ruler"><svg class="icon"><use href="#i-ruler"/></svg><img class="custom-icon" alt="ikon custom"></span>
+            <h3 class="role-name"><span class="subbab-number-label"></span> <span data-editable contenteditable="false">Nama Sub-Bab</span></h3>
+            <span class="role-meta" data-editable contenteditable="false">Keterangan singkat</span>
+            <button class="subbab-delete" title="Hapus sub-bab">×</button>
+          </div>
+          <div class="project-grid" id="${gridId}">
+            <div class="project-card">
+              <button class="drag-handle" draggable="true" data-drag-type="card" title="Tarik untuk ubah urutan kartu">⠿</button><button class="card-delete" title="Hapus">×</button>
+              <span class="icon-wrap" data-icon-id="i-ruler"><svg class="icon"><use href="#i-ruler"/></svg><img class="custom-icon" alt="ikon custom"></span>
+              <h4 data-editable contenteditable="false">Nama Proyek / Lokasi</h4>
+              <div class="card-meta">
+                <span class="meta-item"><span class="icon-wrap" data-icon-id="i-calendar"><svg class="icon"><use href="#i-calendar"/></svg><img class="custom-icon" alt="ikon custom"></span><span data-editable contenteditable="false">Bulan Tahun — Bulan Tahun</span></span>
+                <span class="meta-item"><span class="icon-wrap" data-icon-id="i-pin"><svg class="icon"><use href="#i-pin"/></svg><img class="custom-icon" alt="ikon custom"></span><span data-editable contenteditable="false">Lokasi Kerja</span></span>
+                <span class="meta-item"><span class="icon-wrap" data-icon-id="i-briefcase"><svg class="icon"><use href="#i-briefcase"/></svg><img class="custom-icon" alt="ikon custom"></span><span data-editable contenteditable="false">Jenis Pekerjaan / Posisi</span></span>
+              </div>
+              <p data-editable contenteditable="false">Deskripsi pekerjaan yang dilakukan di proyek ini.</p>
+              <div class="card-links"><a href="#" class="proof-link" data-editable contenteditable="false">Link Bukti Proyek ↗</a><button class="edit-url-btn" data-link title="Ubah tautan">✎</button></div>
+              <div class="doc-gallery" data-doc-gallery><span class="doc-empty-note">Belum ada dokumentasi</span><button class="doc-add" data-doc-add title="Tambah dokumentasi">+</button></div>
+            </div>
+          </div>
+          <button class="add-card-btn" data-add="${gridId}" data-icon="i-ruler">+ Tambah Proyek</button>
+        </div>
+        <button class="add-subbab-btn" data-add-subbab="${babId}" data-icon="i-ruler">+ Tambah Sub-Bab Baru</button>
+      </div>
+    `;
+    const addBabZone = document.querySelector('.add-bab-zone');
+    addBabZone.parentNode.insertBefore(newBab, addBabZone);
+
+    // attach semua listener untuk elemen baru
+    newBab.querySelector('.bab-delete-btn').addEventListener('click', () => {
+      if (!confirm('Hapus seluruh Bab ini beserta semua isinya? Tindakan ini tidak bisa dibatalkan.')) return;
+      newBab.remove();
+      renumberBabAndSubbab();
+    });
+    newBab.querySelectorAll('.subbab-delete').forEach(b => b.addEventListener('click', () => {
+      if (!confirm('Hapus sub-bab ini beserta semua isinya?')) return;
+      b.closest('[data-subbab]').remove();
+      renumberBabAndSubbab();
+    }));
+    attachLinkEditor(newBab.querySelector('[data-link]'));
+    updateProofLinkState(newBab.querySelector('.proof-link'));
+    attachDocAdd(newBab.querySelector('[data-doc-add]'));
+    newBab.querySelectorAll('a').forEach(a => a.addEventListener('click', (e) => { if (document.body.classList.contains('edit-mode')) e.preventDefault(); }));
+    attachAddCardBtn(newBab.querySelector('[data-add]'));
+    attachAddSubbabBtn(newBab.querySelector('[data-add-subbab]'));
+    newBab.querySelectorAll('[data-editable]').forEach(el => el.setAttribute('contenteditable', 'true'));
+    io.observe(newBab.querySelector('.reveal'));
+
+    renumberBabAndSubbab();
+    newBab.querySelector('.sec-title').focus();
+    newBab.scrollIntoView({ behavior:'smooth', block:'center' });
+  });
+
+  // Helper supaya tombol +Tambah Proyek dan +Tambah Sub-Bab pada elemen yang baru
+  // dibuat lewat JS juga berfungsi sama seperti yang sudah ada di markup awal.
+  function attachAddCardBtn(btn){
+    if (!btn) return;
+    btn.addEventListener('click', () => {
+      const grid = document.getElementById(btn.getAttribute('data-add'));
+      const iconId = btn.getAttribute('data-icon') || 'i-ruler';
+      const card = document.createElement('div');
+      card.className = 'project-card';
+      card.innerHTML =
+        '<button class="drag-handle" draggable="true" data-drag-type="card" title="Tarik untuk ubah urutan kartu">⠿</button><button class="card-delete" title="Hapus">×</button>' +
+        '<svg class="icon"><use href="#' + iconId + '"/></svg>' +
+        '<h4 data-editable contenteditable="false">Lokasi / Nama Proyek</h4>' +
+        '<div class="card-meta">' +
+          '<span class="meta-item"><span class="icon-wrap" data-icon-id="i-calendar"><svg class="icon"><use href="#i-calendar"/></svg><img class="custom-icon" alt="ikon custom"></span><span data-editable contenteditable="false">Bulan Tahun — Bulan Tahun</span></span>' +
+          '<span class="meta-item"><span class="icon-wrap" data-icon-id="i-pin"><svg class="icon"><use href="#i-pin"/></svg><img class="custom-icon" alt="ikon custom"></span><span data-editable contenteditable="false">Lokasi Kerja</span></span>' +
+          '<span class="meta-item"><span class="icon-wrap" data-icon-id="i-briefcase"><svg class="icon"><use href="#i-briefcase"/></svg><img class="custom-icon" alt="ikon custom"></span><span data-editable contenteditable="false">Jenis Pekerjaan / Posisi</span></span>' +
+        '</div>' +
+        '<p data-editable contenteditable="false">Deskripsi pekerjaan yang dilakukan di proyek ini.</p>' +
+        '<div class="card-links"><a href="#" class="proof-link" data-editable contenteditable="false">Link Bukti Proyek ↗</a><button class="edit-url-btn" data-link title="Ubah tautan">✎</button></div>' +
+        '<div class="doc-gallery" data-doc-gallery><span class="doc-empty-note">Belum ada dokumentasi</span><button class="doc-add" data-doc-add title="Tambah dokumentasi">+</button></div>';
+      grid.appendChild(card);
+      card.querySelector('.card-delete').addEventListener('click', () => card.remove());
+      attachLinkEditor(card.querySelector('[data-link]'));
+      updateProofLinkState(card.querySelector('.proof-link'));
+      attachDocAdd(card.querySelector('[data-doc-add]'));
+      card.querySelector('a').addEventListener('click', (e) => { if (document.body.classList.contains('edit-mode')) e.preventDefault(); });
+    });
+  }
+  function attachAddSubbabBtn(btn){
+    if (!btn) return;
+    btn.addEventListener('click', () => {
+      const babId = btn.getAttribute('data-add-subbab');
+      const bab = document.getElementById(babId);
+      const gridId = 'grid-custom-' + (++babCounter);
+      const subbab = document.createElement('div');
+      subbab.className = 'role-block reveal in';
+      subbab.setAttribute('data-subbab', '');
+      subbab.innerHTML = `
+        <div class="role-head"><button class="drag-handle" draggable="true" data-drag-type="subbab" title="Tarik untuk ubah urutan sub-bab">⠿</button>
+          <span class="icon-wrap" data-icon-id="i-ruler"><svg class="icon"><use href="#i-ruler"/></svg><img class="custom-icon" alt="ikon custom"></span>
+          <h3 class="role-name"><span class="subbab-number-label"></span> <span data-editable contenteditable="false">Nama Sub-Bab Baru</span></h3>
+          <span class="role-meta" data-editable contenteditable="false">Keterangan singkat</span>
+          <button class="subbab-delete" title="Hapus sub-bab">×</button>
+        </div>
+        <div class="project-grid" id="${gridId}">
+          <div class="project-card">
+            <button class="drag-handle" draggable="true" data-drag-type="card" title="Tarik untuk ubah urutan kartu">⠿</button><button class="card-delete" title="Hapus">×</button>
+            <span class="icon-wrap" data-icon-id="i-ruler"><svg class="icon"><use href="#i-ruler"/></svg><img class="custom-icon" alt="ikon custom"></span>
+            <h4 data-editable contenteditable="false">Nama Proyek / Lokasi</h4>
+            <div class="card-meta">
+              <span class="meta-item"><span class="icon-wrap" data-icon-id="i-calendar"><svg class="icon"><use href="#i-calendar"/></svg><img class="custom-icon" alt="ikon custom"></span><span data-editable contenteditable="false">Bulan Tahun — Bulan Tahun</span></span>
+              <span class="meta-item"><span class="icon-wrap" data-icon-id="i-pin"><svg class="icon"><use href="#i-pin"/></svg><img class="custom-icon" alt="ikon custom"></span><span data-editable contenteditable="false">Lokasi Kerja</span></span>
+              <span class="meta-item"><span class="icon-wrap" data-icon-id="i-briefcase"><svg class="icon"><use href="#i-briefcase"/></svg><img class="custom-icon" alt="ikon custom"></span><span data-editable contenteditable="false">Jenis Pekerjaan / Posisi</span></span>
+            </div>
+            <p data-editable contenteditable="false">Deskripsi pekerjaan yang dilakukan di proyek ini.</p>
+            <div class="card-links"><a href="#" class="proof-link" data-editable contenteditable="false">Link Bukti Proyek ↗</a><button class="edit-url-btn" data-link title="Ubah tautan">✎</button></div>
+            <div class="doc-gallery" data-doc-gallery><span class="doc-empty-note">Belum ada dokumentasi</span><button class="doc-add" data-doc-add title="Tambah dokumentasi">+</button></div>
+          </div>
+        </div>
+        <button class="add-card-btn" data-add="${gridId}" data-icon="i-ruler">+ Tambah Proyek</button>
+      `;
+      btn.parentNode.insertBefore(subbab, btn);
+      subbab.querySelector('.subbab-delete').addEventListener('click', () => {
+        if (!confirm('Hapus sub-bab ini beserta semua isinya?')) return;
+        subbab.remove();
+        renumberBabAndSubbab();
+      });
+      attachLinkEditor(subbab.querySelector('[data-link]'));
+      updateProofLinkState(subbab.querySelector('.proof-link'));
+      attachDocAdd(subbab.querySelector('[data-doc-add]'));
+      subbab.querySelectorAll('a').forEach(a => a.addEventListener('click', (e) => { if (document.body.classList.contains('edit-mode')) e.preventDefault(); }));
+      attachAddCardBtn(subbab.querySelector('[data-add]'));
+      renumberBabAndSubbab();
+      subbab.querySelector('.role-name [data-editable]').focus();
+    });
+  }
+</script>
+</body>
+</html>
